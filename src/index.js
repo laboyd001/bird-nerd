@@ -1,8 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import BirdNerd from './BirdNerd';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import BirdNerd from "./components/BirdNerd";
 
+import "./index.css";
 
-ReactDOM.render(<BirdNerd />, document.getElementById('root'));
-
+ReactDOM.render(
+  <Router>
+    <BirdNerd />
+  </Router>,
+  document.getElementById("root")
+);
