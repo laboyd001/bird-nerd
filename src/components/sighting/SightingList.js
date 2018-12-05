@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import APIManager from "../../modules/APIManager";
 import SightingCard from "./SightingCard";
 
-export default class SighingList extends Component {
+export default class SightingList extends Component {
   state = {
     users: [],
     sightings: [],
