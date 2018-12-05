@@ -6,7 +6,7 @@ export default class SightingForm extends Component {
   state = {
     date: "",
     location: "",
-    bird: "",
+    birdId: "",
     summary: ""
   };
 
@@ -25,13 +25,14 @@ export default class SightingForm extends Component {
         date: this.state.date,
         location: this.state.location,
         birdId: this.props.birds.find(
-          b => b.name === this.state.bird
-        ).id
+          b => b.name === this.state.birdId
+        ).id,
+        summary: this.state.summary
       };
+      console.log("sighting", sighting)
 
-      // Create the animal and redirect user to animal list
       this.props
-        .APIManager.addEntry("sightings", sighting)
+        .addSighting("sightings", sighting)
         .then(() => this.props.history.push("/sightings"));
     }
   };
@@ -79,7 +80,7 @@ render() {
           <select
             defaultValue=""
             name="bird"
-            id="bird"
+            id="birdId"
             onChange={this.handleFieldChange}
           >
             <option value="">Select a Bird</option>

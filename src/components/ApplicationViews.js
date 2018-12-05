@@ -9,7 +9,8 @@ import APIManager from "../modules/APIManager";
 
 export default class ApplicationViews extends Component {
   state = {
-    birds:[]
+    birds:[],
+    sightings:[]
   }
 
   componentDidMount() {
@@ -22,6 +23,18 @@ export default class ApplicationViews extends Component {
 
       .then(() => this.setState(newState));
   }
+
+  addSighting = sighting => {
+    return APIManager.addEntry("sightings", sighting)
+      .then(() =>
+        APIManager.getAllEntries("sightings")
+      )
+      .then(sightings =>
+        this.setState({
+          sightings: sightings
+        })
+      );
+  };
 
   render() {
     return (
@@ -46,7 +59,7 @@ export default class ApplicationViews extends Component {
             return (
               <SightingForm
                 {...props}
-                addAnimal={this.addAnimal}
+                addSighting={this.addSighting}
                 birds={this.state.birds}
               />
             );
