@@ -1,0 +1,7 @@
+.sighting-card {
+  background: whitesmoke;
+  margin: 5px 20px 5px 20px;
+  padding: 20px;
+  border: 1px solid lightskyblue;
+  border-radius: 10px;
+}

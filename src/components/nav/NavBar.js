@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -6,13 +7,28 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  NavLink
+} from "reactstrap";
+import SightingModal from "../sighting/SightingModal";
+import APIManager from "../../modules/APIManager";
+import "./NavBar.css";
 
 export default class NavBar extends React.Component {
+  state = {
+    birds: [],
+    sightings: [],
+    date: "",
+    location: "",
+    birdId: "",
+    summary: ""
+  };
+
+  componentDidMount() {
+    APIManager.getAllEntries("birds").then(birds => {
+      this.setState({ birds: birds });
+    });
+  }
+
   constructor(props) {
     super(props);
 
@@ -21,49 +37,84 @@ export default class NavBar extends React.Component {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
+
+  addSighting = sighting => {
+    return APIManager.addEntry("sightings", sighting)
+      .then(() => APIManager.getAllEntries("sightings"))
+      .then(sightings =>
+        this.setState({
+          sightings: sightings
+        })
+      );
+  };
+
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
+
+  constructNewSighting = () => {
+    if (this.state.bird === "") {
+      window.alert("Please select a bird");
+    } else {
+      const sighting = {
+        date: this.state.date,
+        location: this.state.location,
+        birdId: this.state.birds.find(b => b.name === this.state.birdId).id,
+        summary: this.state.summary
+      };
+      console.log("sighting", sighting);
+      this.addSighting(sighting).then(() =>
+        this.setState({
+          date: "",
+          location: "",
+          birdId: "",
+          summary: ""
+        })
+      );
+    }
+  };
+
   render() {
     return (
-      <div>
-        <Navbar color="dark" light expand="md">
-          <NavbarBrand className="text-light" href="/">Bird Nerd</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-            <NavItem>
-                <NavLink className="text-light" href="/sightings/new">+New Sighting</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="text-light" href="/">Sightings</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="text-light" href="/birds">Birds</NavLink>
-              </NavItem>
-              {/* <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+      <React.Fragment>
+        <div>
+          <Navbar color="dark" light expand="md">
+            <NavbarBrand className="text-light" href="/">
+              Bird Nerd
+            </NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <SightingModal
+                    handleFieldChange={this.handleFieldChange}
+                    constructNewSighting={this.constructNewSighting}
+                    birds={this.state.birds}
+                  />
+                </NavItem>
+                <NavItem>
+                  <Link className="text-light nav-link" to="/">
+                    Sightings
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link className="text-light nav-link" to="/birds">
+                    Birds
+                  </Link>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+        </div>
+      </React.Fragment>
     );
   }
 }

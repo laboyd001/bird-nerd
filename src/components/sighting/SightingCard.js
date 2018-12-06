@@ -5,10 +5,10 @@ export default class SightingCard extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="sighting__card" key={this.props.sighting.id}>
+        <div className="sighting-card" key={this.props.sighting.id}>
           <p>{this.props.sighting.date}</p>
           <p>{this.props.sighting.location}</p>
-          <p>{this.props.sighting.bird}</p>
+          <p>{this.props.sighting.bird.name}</p>
           <p>{this.props.sighting.summary}</p>
         </div>
       </React.Fragment>
