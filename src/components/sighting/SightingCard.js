@@ -8,7 +8,7 @@ export default class SightingCard extends Component {
         <div className="sighting-card" key={this.props.sighting.id}>
           <p>{this.props.sighting.date}</p>
           <p>{this.props.sighting.location}</p>
-          <p>{this.props.sighting.bird}</p>
+          <p>{this.props.sighting.bird.name}</p>
           <p>{this.props.sighting.summary}</p>
         </div>
       </React.Fragment>

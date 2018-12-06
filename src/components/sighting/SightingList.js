@@ -6,13 +6,14 @@ export default class SightingList extends Component {
   state = {
     users: [],
     sightings: [],
-    birds: []
+    birds: [],
+    birdName: ""
   };
 
   componentDidMount() {
     const newState = {};
 
-    APIManager.getAllEntries("sightings", `?_sort=date&_order=asc`)
+    APIManager.getAllEntries("sightings", "?_sort=date&_order=asc&_expand=bird")
       .then(sightings => {
         this.setState({ sightings: sightings });
       })
