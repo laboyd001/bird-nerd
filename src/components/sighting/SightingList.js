@@ -5,19 +5,8 @@ import SightingCard from "./SightingCard";
 export default class SightingList extends Component {
   state = {
     users: [],
-    birdName: ""
+    // birdName: ""
   };
-
-  // componentDidMount() {
-  //   const newState = {};
-
-  //   APIManager.getAllEntries("sightings", "?_sort=date&_order=asc&_expand=bird")
-  //     .then(sightings => {
-  //       this.setState({ sightings: sightings });
-  //     })
-
-  //     .then(() => this.setState(newState));
-  // }
 
   render() {
     return (
@@ -31,6 +20,7 @@ export default class SightingList extends Component {
                 sighting={sighting}
                 sightings={this.props.sightings}
                 birds={this.props.birds}
+                deleteSighting={this.props.deleteSighting}
                 // birdName={this.state.birdName}
               />
             ))}

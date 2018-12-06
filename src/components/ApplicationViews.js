@@ -50,6 +50,20 @@ export default class ApplicationViews extends Component {
       );
   };
 
+  deleteSighting = id =>
+    APIManager.deleteEntry("sightings", id)
+      .then(() =>
+        APIManager.getAllEntries(
+          "sightings",
+          "?_sort=date&_order=asc&_expand=bird"
+        )
+      )
+      .then(sightings =>
+        this.setState({
+          sightings: sightings
+        })
+      );
+
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
@@ -87,6 +101,7 @@ export default class ApplicationViews extends Component {
             {...props}
             birds={this.state.birds}
             sightings={this.state.sightings}
+            deleteSighting={this.deleteSighting}
           />;
           }}
         />
