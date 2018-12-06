@@ -22,7 +22,7 @@ export default class BirdList extends Component {
   render () {
     return (
       <React.Fragment>
-        <h2>Birds</h2>
+        <h2 className="page-title">Birds</h2>
         <section className="birds">
           <div className="card__holder">
             {this.state.birds.map(bird => (
