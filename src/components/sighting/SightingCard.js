@@ -2,13 +2,18 @@ import React, { Component } from "react";
 import { Button, ButtonGroup } from 'reactstrap';
 import "./Sighting.css";
 import SightingEdit from "./SightingEdit";
+import Moment from 'react-moment';
 
 export default class SightingCard extends Component {
   render() {
     return (
       <React.Fragment>
         <div className="sighting-card" key={this.props.sighting.id}>
-          <p>{this.props.sighting.date}</p>
+          <p>
+          <Moment format="MMMM Do YYYY">
+          {this.props.sighting.date}
+          </Moment>
+          </p>
           <p>{this.props.sighting.location}</p>
           <p>{this.props.sighting.bird.name}</p>
           <p>{this.props.sighting.summary}</p>
