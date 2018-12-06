@@ -71,14 +71,11 @@ export default class NavBar extends React.Component {
         summary: this.state.summary
       };
       console.log("sighting", sighting);
-      this.addSighting(sighting).then(() =>
-        this.setState({
-          date: "",
-          location: "",
-          birdId: "",
-          summary: ""
-        })
-      );
+      this.addSighting(sighting)
+
+      // FIXME:Make the page reload with state
+      window.location.href = "http://localhost:3000/"
+
     }
   };
 
@@ -98,6 +95,7 @@ export default class NavBar extends React.Component {
                     handleFieldChange={this.handleFieldChange}
                     constructNewSighting={this.constructNewSighting}
                     birds={this.state.birds}
+                    sightings={this.state.sightings}
                   />
                 </NavItem>
                 <NavItem>
