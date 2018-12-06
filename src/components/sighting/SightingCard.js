@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, ButtonGroup } from 'reactstrap';
 import "./Sighting.css";
+import SightingEdit from "./SightingEdit";
 
 export default class SightingCard extends Component {
   render() {
@@ -13,12 +14,17 @@ export default class SightingCard extends Component {
           <p>{this.props.sighting.summary}</p>
         
         <ButtonGroup className="card-button">
-        <Button
+            <SightingEdit
+              constructEditedSighting={this.props.constructEditedSighting}
+              sighting={this.props.sighting}
+              handleEditClick={this.props.handleEditClick}
+            />
+            {/* <Button
               type="button"
               className="btn"
             >
               Edit
-            </Button>
+            </Button> */}
             <Button
               type="button"
               onClick={() => this.props.deleteSighting(this.props.sighting.id)}

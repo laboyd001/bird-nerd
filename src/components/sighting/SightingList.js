@@ -22,6 +22,10 @@ export default class SightingList extends Component {
                 birds={this.props.birds}
                 deleteSighting={this.props.deleteSighting}
                 // birdName={this.state.birdName}
+                editSighting={this.props.editSighting}
+                handleEditClick={this.props.handleEditClick}
+                constructEditedSighting={this.props.constructEditedSighting}
+
               />
             ))}
           </div>
