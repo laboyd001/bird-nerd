@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import APIManager from "../../modules/APIManager";
 import SightingCard from "./SightingCard";
 
 export default class SightingList extends Component {
@@ -11,9 +10,9 @@ export default class SightingList extends Component {
   render() {
     return (
       <React.Fragment>
-        <h2>Sightings</h2>
+        <h2 className="page-title">Sightings</h2>
         <section className="sightings">
-          <div className="card__holder">
+          <div className="card-holder">
             {this.props.sightings.map(sighting => (
               <SightingCard
                 key={sighting.id}
@@ -22,6 +21,10 @@ export default class SightingList extends Component {
                 birds={this.props.birds}
                 deleteSighting={this.props.deleteSighting}
                 // birdName={this.state.birdName}
+                editSighting={this.props.editSighting}
+                handleEditClick={this.props.handleEditClick}
+                constructEditedSighting={this.props.constructEditedSighting}
+
               />
             ))}
           </div>

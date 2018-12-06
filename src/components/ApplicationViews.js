@@ -14,7 +14,12 @@ export default class ApplicationViews extends Component {
     date: "",
     location: "",
     birdId: "",
-    summary: ""
+    summary: "",
+    editDate: "",
+    editLocation:"",
+    editBirdId:"",
+    editSummary:"",
+    editId:""
   }
 
   componentDidMount() {
@@ -64,6 +69,36 @@ export default class ApplicationViews extends Component {
         })
       );
 
+  editSighting = (editId, editSighting) =>
+  APIManager.editEntry("sightings", editId, editSighting)
+    .then(() =>
+      APIManager.getAllEntries(
+        "sightings",
+        "?_sort=date&_order=asc&_expand=bird"
+      )
+    )
+    .then(sightings =>
+      this.setState({
+        sightings: sightings
+      })
+    );
+
+  handleEditClick = (
+    editDate,
+    editLocation,
+    editBirdId,
+    editSummary,
+    editId
+  ) => {
+    this.setState({
+      editDate: editDate,
+      editLocation: editLocation,
+      editBirdId: editBirdId,
+      editSummary: editSummary,
+      editId: editId
+    });
+  }
+
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
@@ -84,6 +119,19 @@ export default class ApplicationViews extends Component {
       this.addSighting(sighting)
     }}
 
+  constructEditedSighting = () => {
+    const editSighting = {
+      date: this.state.editDate,
+      location: this.state.editLocation,
+      birdId: this.state.editBirdId,
+      summary: this.state.editSummary,
+      id: this.state.editId
+    };
+    console.log("edit sighting", editSighting);
+
+    this.editSighting(editSighting.id, editSighting);
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -102,6 +150,9 @@ export default class ApplicationViews extends Component {
             birds={this.state.birds}
             sightings={this.state.sightings}
             deleteSighting={this.deleteSighting}
+            editSighting={this.editSighting}
+            handleEditClick={this.handleEditClick}
+            constructEditedSighting={this.constructEditedSighting}
           />;
           }}
         />
