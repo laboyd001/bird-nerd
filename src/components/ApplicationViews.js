@@ -11,10 +11,10 @@ export default class ApplicationViews extends Component {
   state = {
     birds:[],
     sightings:[],
-    date: "",
-    location: "",
-    birdId: "",
-    summary: "",
+    // date: "",
+    // location: "",
+    // birdId: "",
+    // summary: "",
     editDate: "",
     editLocation:"",
     editBirdId:"",
@@ -150,8 +150,8 @@ export default class ApplicationViews extends Component {
             birds={this.state.birds}
             sightings={this.state.sightings}
             deleteSighting={this.deleteSighting}
-            editSighting={this.editSighting}
             handleEditClick={this.handleEditClick}
+            handleFieldChange={this.handleFieldChange}
             constructEditedSighting={this.constructEditedSighting}
           />;
           }}

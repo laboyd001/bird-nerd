@@ -15,21 +15,16 @@ export default class SightingCard extends Component {
           </Moment>
           </p>
           <p>{this.props.sighting.location}</p>
-          <p>{this.props.sighting.bird.name}</p>
+          {/* <p>{this.props.sighting.bird.name}</p> */}
           <p>{this.props.sighting.summary}</p>
         
         <ButtonGroup className="card-button">
             <SightingEdit
-              constructEditedSighting={this.props.constructEditedSighting}
               sighting={this.props.sighting}
               handleEditClick={this.props.handleEditClick}
+              handleFieldChange={this.props.handleFieldChange}
+              constructEditedSighting={this.props.constructEditedSighting}
             />
-            {/* <Button
-              type="button"
-              className="btn"
-            >
-              Edit
-            </Button> */}
             <Button
               type="button"
               onClick={() => this.props.deleteSighting(this.props.sighting.id)}
