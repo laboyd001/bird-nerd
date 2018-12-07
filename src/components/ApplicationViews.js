@@ -3,49 +3,58 @@ import { Route, Redirect } from "react-router-dom";
 import SightingList from "./sighting/SightingList";
 import BirdList from "./bird/BirdList";
 import APIManager from "../modules/APIManager";
-import NavBar from './nav/NavBar';
+import NavBar from "./nav/NavBar";
+import Welcome from './authentication/Welcome'
 
 // import SightingCard from './sighting/SightingCard'
 
 export default class ApplicationViews extends Component {
   state = {
-    birds:[],
-    sightings:[],
+    birds: [],
+    sightings: [],
     // date: "",
     // location: "",
     // birdId: "",
     // summary: "",
     editDate: "",
-    editLocation:"",
-    editBirdId:"",
-    editSummary:"",
-    editId:""
-  }
+    editLocation: "",
+    editBirdId: "",
+    editSummary: "",
+    editId: ""
+  };
+
+  isAuthenticated = () =>
+    sessionStorage.getItem("userId") !== null ||
+    localStorage.getItem("userId") !== null;
+
+  getAllUsers = () => APIManager.getAllEntries("users");
+
+  getCurrentUser = () => {
+    const currentUser =
+      +sessionStorage.getItem("userId") || +localStorage.getItem("userId");
+    return currentUser;
+  };
 
   componentDidMount() {
     const newState = {};
-    APIManager.getAllEntries("birds")
-      .then(birds => {
-        this.setState({ birds: birds });
+    APIManager.getAllEntries("birds").then(birds => {
+      this.setState({ birds: birds });
+    });
+
+    APIManager.getAllEntries("sightings", "?_sort=date&_order=asc&_expand=bird")
+      .then(sightings => {
+        this.setState({ sightings: sightings });
       })
 
-      APIManager.getAllEntries(
-        "sightings",
-        "?_sort=date&_order=asc&_expand=bird"
-      )
-        .then(sightings => {
-          this.setState({ sightings: sightings });
-        })
-
       .then(() => this.setState(newState));
-
   }
 
   addSighting = sighting => {
     return APIManager.addEntry("sightings", sighting)
       .then(() =>
-        APIManager.getAllEntries("sightings",
-        "?_sort=date&_order=asc&_expand=bird"
+        APIManager.getAllEntries(
+          "sightings",
+          "?_sort=date&_order=asc&_expand=bird"
         )
       )
       .then(sightings =>
@@ -70,18 +79,18 @@ export default class ApplicationViews extends Component {
       );
 
   editSighting = (editId, editSighting) =>
-  APIManager.editEntry("sightings", editId, editSighting)
-    .then(() =>
-      APIManager.getAllEntries(
-        "sightings",
-        "?_sort=date&_order=asc&_expand=bird"
+    APIManager.editEntry("sightings", editId, editSighting)
+      .then(() =>
+        APIManager.getAllEntries(
+          "sightings",
+          "?_sort=date&_order=asc&_expand=bird"
+        )
       )
-    )
-    .then(sightings =>
-      this.setState({
-        sightings: sightings
-      })
-    );
+      .then(sightings =>
+        this.setState({
+          sightings: sightings
+        })
+      );
 
   handleEditClick = (
     editDate,
@@ -97,7 +106,7 @@ export default class ApplicationViews extends Component {
       editSummary: editSummary,
       editId: editId
     });
-  }
+  };
 
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -116,8 +125,9 @@ export default class ApplicationViews extends Component {
         summary: this.state.summary
       };
       console.log("sighting", sighting);
-      this.addSighting(sighting)
-    }}
+      this.addSighting(sighting);
+    }
+  };
 
   constructEditedSighting = () => {
     const conditionBird = typeof this.state.editBirdId === "number";
@@ -125,8 +135,8 @@ export default class ApplicationViews extends Component {
       date: this.state.editDate,
       location: this.state.editLocation,
       birdId: conditionBird
-      ? this.state.editBirdId
-      :this.state.birds.find(b => b.name === this.state.editBirdId).id,
+        ? this.state.editBirdId
+        : this.state.birds.find(b => b.name === this.state.editBirdId).id,
       summary: this.state.editSummary,
       id: this.state.editId
     };
@@ -139,33 +149,49 @@ export default class ApplicationViews extends Component {
     return (
       <React.Fragment>
         <NavBar
-        birds={this.state.birds}
-        sightings={this.state.sightings}
-        handleFieldChange={this.handleFieldChange}
-        constructNewSighting={this.constructNewSighting}
+          birds={this.state.birds}
+          sightings={this.state.sightings}
+          handleFieldChange={this.handleFieldChange}
+          constructNewSighting={this.constructNewSighting}
         />
         <Route
           exact
           path="/"
           render={props => {
-            return <SightingList
-            {...props}
-            birds={this.state.birds}
-            sightings={this.state.sightings}
-            deleteSighting={this.deleteSighting}
-            handleEditClick={this.handleEditClick}
-            handleFieldChange={this.handleFieldChange}
-            constructEditedSighting={this.constructEditedSighting}
-          />;
+            if (this.isAuthenticated()) {
+              return (
+                <SightingList
+                  {...props}
+                  birds={this.state.birds}
+                  sightings={this.state.sightings}
+                  deleteSighting={this.deleteSighting}
+                  handleEditClick={this.handleEditClick}
+                  handleFieldChange={this.handleFieldChange}
+                  constructEditedSighting={this.constructEditedSighting}
+                />
+              );
+            } else {
+              return <Redirect to="/welcome" />;
+            }
           }}
         />
         <Route
           exact
           path="/birds"
           render={props => {
-            return <BirdList />;
-          }}
-        />
+            if (this.isAuthenticated()) {
+            return (
+            <BirdList />
+            );
+           } else {
+             return <Redirect to="/welcome" />;
+           }
+         }}
+       />
+       <Route path="/welcome" render={props => {
+          return (
+            <Welcome getAllUsers={this.getAllUsers} getCurrentUser={this.getCurrentUser} {...props} />)
+        }} />
       </React.Fragment>
     );
   }
