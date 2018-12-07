@@ -12,6 +12,9 @@ export default class ApplicationViews extends Component {
   state = {
     birds: [],
     sightings: [],
+    users: [],
+    currentUserId:  +sessionStorage.getItem("userId") || +localStorage.getItem("userId"),
+    userName:"",
     // date: "",
     // location: "",
     // birdId: "",
@@ -41,10 +44,15 @@ export default class ApplicationViews extends Component {
       this.setState({ birds: birds });
     });
 
-    APIManager.getAllEntries("sightings", "?_sort=date&_order=asc&_expand=bird")
+    APIManager.getAllEntries("sightings", `?user_id=${this.state.currentUserId}&_sort=date&_order=asc&_expand=bird`)
       .then(sightings => {
         this.setState({ sightings: sightings });
       })
+    
+    APIManager.getEntry("users", this.state.currentUserId)
+    .then((user) => {
+      this.setState({ userName: user.name })
+    })
 
       .then(() => this.setState(newState));
   }
@@ -54,7 +62,7 @@ export default class ApplicationViews extends Component {
       .then(() =>
         APIManager.getAllEntries(
           "sightings",
-          "?_sort=date&_order=asc&_expand=bird"
+          `?user_id=${this.state.currentUserId}&_sort=date&_order=asc&_expand=bird`
         )
       )
       .then(sightings =>
@@ -69,7 +77,7 @@ export default class ApplicationViews extends Component {
       .then(() =>
         APIManager.getAllEntries(
           "sightings",
-          "?_sort=date&_order=asc&_expand=bird"
+          `?user_id=${this.state.currentUserId}&_sort=date&_order=asc&_expand=bird`
         )
       )
       .then(sightings =>
@@ -83,7 +91,7 @@ export default class ApplicationViews extends Component {
       .then(() =>
         APIManager.getAllEntries(
           "sightings",
-          "?_sort=date&_order=asc&_expand=bird"
+          `?user_id=${this.state.currentUserId}&_sort=date&_order=asc&_expand=bird`
         )
       )
       .then(sightings =>
@@ -122,7 +130,8 @@ export default class ApplicationViews extends Component {
         date: this.state.date,
         location: this.state.location,
         birdId: this.state.birds.find(b => b.name === this.state.birdId).id,
-        summary: this.state.summary
+        summary: this.state.summary,
+        user_id: +this.state.currentUserId
       };
       console.log("sighting", sighting);
       this.addSighting(sighting);
@@ -151,6 +160,7 @@ export default class ApplicationViews extends Component {
         <NavBar
           birds={this.state.birds}
           sightings={this.state.sightings}
+          userName={this.state.userName}
           handleFieldChange={this.handleFieldChange}
           constructNewSighting={this.constructNewSighting}
         />
@@ -164,6 +174,7 @@ export default class ApplicationViews extends Component {
                   {...props}
                   birds={this.state.birds}
                   sightings={this.state.sightings}
+                  getCurrentUser={this.getCurrentUser}
                   deleteSighting={this.deleteSighting}
                   handleEditClick={this.handleEditClick}
                   handleFieldChange={this.handleFieldChange}

@@ -9,7 +9,9 @@ export default class BirdNerd extends Component {
   render() {
     return (
       <React.Fragment>
-        <ApplicationViews />
+        <ApplicationViews
+        isAuthenticated={this.isAuthenticated}
+        />
       </React.Fragment>
     );
   }

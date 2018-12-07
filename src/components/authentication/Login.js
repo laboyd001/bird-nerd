@@ -34,7 +34,7 @@ export default class Login extends Component {
                 </button>
           </div>
           <div className="text__center">
-          <button  className="register__link" onClick={() => this.props.handleChangeForm()}>New here? Create an account</button>
+          <button  className="register__link" onClick={() => this.props.handleChangeForm()}>Register an account</button>
           </div>
         </div>
       </React.Fragment>

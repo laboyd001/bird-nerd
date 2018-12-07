@@ -6,8 +6,7 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink
+  NavItem
 } from "reactstrap";
 import SightingModal from "../sighting/SightingModal";
 import "./NavBar.css";
@@ -43,8 +42,8 @@ export default class NavBar extends React.Component {
           <div>
             <Navbar color="dark" light expand="md">
               <NavbarBrand className="text-light" href="/">
-                Bird Nerd
-              </NavbarBrand>
+                Bird Nerd      
+             </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>

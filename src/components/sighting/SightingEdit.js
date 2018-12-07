@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import APIManager from '../../modules/APIManager'
 
 export default class SightingEdit extends React.Component {
   constructor(props) {
