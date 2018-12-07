@@ -120,10 +120,13 @@ export default class ApplicationViews extends Component {
     }}
 
   constructEditedSighting = () => {
+    const conditionBird = typeof this.state.editBirdId === "number";
     const editSighting = {
       date: this.state.editDate,
       location: this.state.editLocation,
-      birdId: this.state.editBirdId,
+      birdId: conditionBird
+      ? this.state.editBirdId
+      :this.state.birds.find(b => b.name === this.state.editBirdId).id,
       summary: this.state.editSummary,
       id: this.state.editId
     };
