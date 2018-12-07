@@ -114,13 +114,29 @@ export default class SightingEdit extends React.Component {
                   type="text"
                   className="form-control"
                   onChange={this.props.handleFieldChange}
-                  id="summary"
+                  id="editSummary"
                   placeholder="Sighting Summary"
                   defaultValue={this.props.sighting.summary}
 
                 />
               </div>
             </div>
+
+            <div className="input-group mb-3 hide">
+                <div className="input-group-prepend">
+                  <span className="input-group-text" id="basic-addon1">
+                    Sighting ID
+                  </span>
+                </div>
+            <input
+              type="text"
+              className="form-control"
+              onChange={this.props.handleFieldChange}
+              id="editId"
+              placeholder="sighting id"
+              defaultValue={this.props.sighting.id}
+            />
+          </div>
           </ModalBody>
           <ModalFooter>
             <Button color="primary" 
