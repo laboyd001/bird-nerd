@@ -7,18 +7,9 @@ export default class SightingEdit extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      birds: []
     };
 
     this.toggle = this.toggle.bind(this);
-  }
-
-  componentDidMount() {
-    APIManager.getAllEntries("birds")
-      .then(birds => {
-        this.setState({ birds: birds });
-      })
-
   }
 
   toggle() {
@@ -28,6 +19,7 @@ export default class SightingEdit extends React.Component {
   }
 
   render() {
+    const birdName = this.props.birds.find(b=> b.id === this.props.sighting.birdId) || {};
     return (
       <div>
         <Button color="danger"
@@ -92,12 +84,12 @@ export default class SightingEdit extends React.Component {
                 </div>
                 <select
                   name="bird"
-                  id="birdId"
+                  id="editBirdId"
                   onChange={this.props.handleFieldChange}
                   defaultValue={this.props.sighting.birdId}
                 >
-                  <option value="">Select a Bird</option>
-                  {this.state.birds.map(b => (
+                  <option defaultValue={this.props.sighting.birdId}>{birdName.name}</option>
+                  {this.props.birds.map(b => (
                     <option key={b.id} id={b.id}>
                       {b.name}
                     </option>
