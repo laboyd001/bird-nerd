@@ -1,3 +1,10 @@
+
+.bird-header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+}
 .bird-card {
   background: whitesmoke;
   margin: 5px 20px 5px 20px;
