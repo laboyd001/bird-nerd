@@ -2,6 +2,13 @@
   display: none;
 }
 
+.sighting-header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
 .page-title{
   margin-left:20px;
 }
