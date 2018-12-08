@@ -8,7 +8,7 @@ import {
   Nav,
   NavItem
 } from "reactstrap";
-import SightingModal from "../sighting/SightingModal";
+// import SightingModal from "../sighting/SightingModal";
 import "./NavBar.css";
 
 export default class NavBar extends React.Component {
@@ -47,14 +47,9 @@ export default class NavBar extends React.Component {
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                  <NavItem>
-                    <SightingModal
-                      birds={this.props.birds}
-                      sightings={this.props.sightings}
-                      handleFieldChange={this.props.handleFieldChange}
-                      constructNewSighting={this.props.constructNewSighting}
-                    />
-                  </NavItem>
+                  {/* <NavItem>
+                    
+                  </NavItem> */}
                   <NavItem>
                     <Link className="text-light nav-link" to="/">
                       Sightings
