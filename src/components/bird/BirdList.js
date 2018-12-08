@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import APIManager from "../../modules/APIManager";
 import BirdCard from "./BirdCard";
+import BirdRadio from "./BirdRadio"
 
 export default class BirdList extends Component {
   state = {
@@ -22,7 +23,10 @@ export default class BirdList extends Component {
   render () {
     return (
       <React.Fragment>
-        <h2 className="page-title">Birds</h2>
+        <div className="bird-header">
+          <h2 className="page-title">Birds</h2>
+          <BirdRadio />
+        </div>
         <section className="birds">
           <div className="card__holder">
             {this.state.birds.map(bird => (
