@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import APIManager from "../../modules/APIManager";
 import BirdCard from "./BirdCard";
-// import BirdRadio from "./BirdRadio"
 
 export default class BirdList extends Component {
   state = {
@@ -15,8 +14,27 @@ export default class BirdList extends Component {
 
     APIManager.getAllEntries("birds", "?_sort=name&_order=asc")
       .then(birds => {
-        this.setState({ birds: birds })})
+        this.setState({ birds: birds });
+      })
       .then(() => this.setState(newState));
+  }
+
+  getUniqueType() {
+    const birds = this.state.birds;
+    const typeSelection = [...new Set(birds.map(item => item.type))];
+    console.log("type", typeSelection);
+    return typeSelection.map((type, index) => (
+      <option key={index}>{type}</option>
+    ));
+  }
+
+  getUniqueColor() {
+    const birds = this.state.birds;
+    const colorSelection = [...new Set(birds.map(item => item.color))];
+    console.log("color", colorSelection);
+    return colorSelection.map((color, index) => (
+      <option key={index}>{color}</option>
+    ));
   }
 
   getBirdType = type => {
@@ -26,15 +44,17 @@ export default class BirdList extends Component {
       .then(birds => {
         this.setState({ birds: birds });
       })
-     
 
       .then(() => this.setState(newState));
   };
 
-  getBirdColor = (color,type) => {
+  getBirdColor = (color, type) => {
     const newState = {};
 
-    APIManager.getAllEntries("birds", `?color=${color}&type=${type}&_sort=name&_order=asc`)
+    APIManager.getAllEntries(
+      "birds",
+      `?color=${color}&type=${type}&_sort=name&_order=asc`
+    )
       .then(birds => {
         this.setState({ birds: birds });
       })
@@ -45,7 +65,7 @@ export default class BirdList extends Component {
   getAllBirds = () => {
     const newState = {};
 
-    APIManager.getAllEntries("birds","?_sort=name&_order=asc")
+    APIManager.getAllEntries("birds", "?_sort=name&_order=asc")
       .then(birds => {
         this.setState({ birds: birds });
       })
@@ -60,6 +80,8 @@ export default class BirdList extends Component {
   };
 
   render() {
+    const birdType = this.getUniqueType();
+    const birdColor = this.getUniqueColor();
     return (
       <React.Fragment>
         <div className="bird-header">
@@ -79,11 +101,7 @@ export default class BirdList extends Component {
                   onChange={this.handleFieldChange}
                 >
                   <option value="">Select a Bird Type</option>
-                  {this.state.birds.map(b => (
-                    <option key={b.id} id={b.id}>
-                      {b.type}
-                    </option>
-                  ))}
+                  {birdType}
                 </select>
                 <button
                   onClick={() => {
@@ -116,15 +134,11 @@ export default class BirdList extends Component {
                   onChange={this.handleFieldChange}
                 >
                   <option value="">Select a Bird Color</option>
-                  {this.state.birds.map(b => (
-                    <option key={b.id} id={b.id}>
-                      {b.color}
-                    </option>
-                  ))}
+                  {birdColor}
                 </select>
                 <button
                   onClick={() => {
-                    this.getBirdColor(this.state.color,this.state.type);
+                    this.getBirdColor(this.state.color, this.state.type);
                   }}
                 >
                   Choose
