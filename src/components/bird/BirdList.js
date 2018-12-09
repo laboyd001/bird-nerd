@@ -13,21 +13,20 @@ export default class BirdList extends Component {
   componentDidMount() {
     const newState = {};
 
-    APIManager.getAllEntries("birds")
+    APIManager.getAllEntries("birds", "?_sort=name&_order=asc")
       .then(birds => {
-        this.setState({ birds: birds });
-      })
-
+        this.setState({ birds: birds })})
       .then(() => this.setState(newState));
   }
 
   getBirdType = type => {
     const newState = {};
 
-    APIManager.getAllEntries("birds", `?type=${type}`)
+    APIManager.getAllEntries("birds", `?type=${type}&_sort=name&_order=asc`)
       .then(birds => {
         this.setState({ birds: birds });
       })
+     
 
       .then(() => this.setState(newState));
   };
@@ -35,7 +34,7 @@ export default class BirdList extends Component {
   getBirdColor = color => {
     const newState = {};
 
-    APIManager.getAllEntries("birds", `?color=${color}`)
+    APIManager.getAllEntries("birds", `?color=${color}&_sort=name&_order=asc`)
       .then(birds => {
         this.setState({ birds: birds });
       })
@@ -46,7 +45,7 @@ export default class BirdList extends Component {
   getAllBirds = () => {
     const newState = {};
 
-    APIManager.getAllEntries("birds")
+    APIManager.getAllEntries("birds","?_sort=name&_order=asc")
       .then(birds => {
         this.setState({ birds: birds });
       })
