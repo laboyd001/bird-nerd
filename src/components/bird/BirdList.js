@@ -31,10 +31,10 @@ export default class BirdList extends Component {
       .then(() => this.setState(newState));
   };
 
-  getBirdColor = color => {
+  getBirdColor = (color,type) => {
     const newState = {};
 
-    APIManager.getAllEntries("birds", `?color=${color}&_sort=name&_order=asc`)
+    APIManager.getAllEntries("birds", `?color=${color}&type=${type}&_sort=name&_order=asc`)
       .then(birds => {
         this.setState({ birds: birds });
       })
@@ -124,7 +124,7 @@ export default class BirdList extends Component {
                 </select>
                 <button
                   onClick={() => {
-                    this.getBirdColor(this.state.color);
+                    this.getBirdColor(this.state.color,this.state.type);
                   }}
                 >
                   Choose
