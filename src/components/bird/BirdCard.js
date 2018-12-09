@@ -7,7 +7,7 @@ export default class BirdCard extends Component {
       <React.Fragment>
         <div className="bird-card" key={this.props.bird.id}>
           <div className="bird-image">
-            <img src={this.props.bird.image} className="bird_image" alt={this.props.bird.name}></img>
+            <img src={this.props.bird.image} className="bird-image" alt={this.props.bird.name}></img>
           </div>
           <div className="bird-details">
             <p>Name: {this.props.bird.name}</p>
