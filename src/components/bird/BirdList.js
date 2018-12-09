@@ -6,7 +6,8 @@ import BirdCard from "./BirdCard";
 export default class BirdList extends Component {
   state = {
     birds: [],
-    type: ""
+    type: "",
+    color: ""
   };
 
   componentDidMount() {
@@ -20,10 +21,21 @@ export default class BirdList extends Component {
       .then(() => this.setState(newState));
   }
 
-  getBirdType = search => {
+  getBirdType = type => {
     const newState = {};
 
-    APIManager.getAllEntries("birds", `?type=${search}`)
+    APIManager.getAllEntries("birds", `?type=${type}`)
+      .then(birds => {
+        this.setState({ birds: birds });
+      })
+
+      .then(() => this.setState(newState));
+  };
+
+  getBirdColor = color => {
+    const newState = {};
+
+    APIManager.getAllEntries("birds", `?color=${color}`)
       .then(birds => {
         this.setState({ birds: birds });
       })
@@ -53,40 +65,79 @@ export default class BirdList extends Component {
       <React.Fragment>
         <div className="bird-header">
           <h2 className="page-title">Birds</h2>
-          <div className="bird-type">
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <span className="input-group-text" id="basic-addon1">
-                Bird Type
-              </span>
+          <div className="bird-selector">
+            <div className="bird-type">
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text" id="basic-addon1">
+                    Bird Type
+                  </span>
+                </div>
+                <select
+                  defaultValue=""
+                  name="birdType"
+                  id="type"
+                  onChange={this.handleFieldChange}
+                >
+                  <option value="">Select a Bird Type</option>
+                  {this.state.birds.map(b => (
+                    <option key={b.id} id={b.id}>
+                      {b.type}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  onClick={() => {
+                    this.getBirdType(this.state.type);
+                  }}
+                >
+                  Choose
+                </button>
+                <button
+                  onClick={() => {
+                    this.getAllBirds();
+                  }}
+                >
+                  Clear
+                </button>
+              </div>
             </div>
-            <select
-              defaultValue=""
-              name="birdType"
-              id="type"
-              onChange={this.handleFieldChange}
-            >
-              <option value="">Select a Bird Type</option>
-              {this.state.birds.map(b => (
-                <option key={b.id} id={b.id}>
-                  {b.type}
-                </option>
-              ))}
-            </select>
-            <button
-              onClick={() => {
-                this.getBirdType(this.state.type);
-              }}
-            >
-              Choose
-            </button>
-            <button
-              onClick={() => {
-                this.getAllBirds();
-              }}
-            >
-              Clear
-            </button>
+
+            <div className="bird-color">
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text" id="basic-addon1">
+                    Bird Color
+                  </span>
+                </div>
+                <select
+                  defaultValue=""
+                  name="birdColor"
+                  id="color"
+                  onChange={this.handleFieldChange}
+                >
+                  <option value="">Select a Bird Color</option>
+                  {this.state.birds.map(b => (
+                    <option key={b.id} id={b.id}>
+                      {b.color}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  onClick={() => {
+                    this.getBirdColor(this.state.color);
+                  }}
+                >
+                  Choose
+                </button>
+                <button
+                  onClick={() => {
+                    this.getAllBirds();
+                  }}
+                >
+                  Clear
+                </button>
+              </div>
             </div>
           </div>
         </div>
