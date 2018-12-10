@@ -59,7 +59,9 @@ export default class ApplicationViews extends Component {
           render={props => {
             if (this.isAuthenticated()) {
             return (
-            <BirdMap />
+            <BirdMap
+            getCurrentUser={this.getCurrentUser}
+            />
             );
            } else {
              return <Redirect to="/welcome" />;

@@ -9,13 +9,14 @@ class BirdMap extends React.Component {
       sightings:[],
       showingInfoWindow: false,
       activeMarker: {},
-      selectedPlace: {}
+      selectedPlace: {},
+      currentUserId: this.props.getCurrentUser()
     }
 
   componentDidMount() {
     const newState = {};
 
-    APIManager.getAllEntries("sightings")
+    APIManager.getAllEntries("sightings", `?user_id=${this.state.currentUserId}&_expand=bird`)
       .then(sightings => {
         this.setState({ sightings: sightings});
       })
@@ -58,8 +59,10 @@ class BirdMap extends React.Component {
             <Marker
               key={item.id}
               onClick = { this.onMarkerClick }
-              title={item.location}
+              title={item.bird.name}
               name={item.location}
+              summary={item.summary}
+              bird={item.bird.name}
               position={{ lat: item.lat, lng: item.lng }}
             />
           ))}
@@ -67,7 +70,11 @@ class BirdMap extends React.Component {
           marker = { this.state.activeMarker }
           visible = { this.state.showingInfoWindow }
         >
-        <p>{this.state.sightings.birdId}</p> 
+         <div>
+            <p>{this.state.selectedPlace.name}</p>
+            <p>{this.state.selectedPlace.summary}</p>
+            <p>{this.state.selectedPlace.bird}</p>
+         </div>
         </InfoWindow>
       </Map>
     );

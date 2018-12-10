@@ -17,7 +17,7 @@ Geocode.enableDebug();
 //   }
 // );
 
-// Get latidude & longitude from address.
+// Get latitude & longitude from address.
 Geocode.fromAddress("3132 Stafford Drive Nashville, TN 37214").then(
   response => {
     const { lat, lng } = response.results[0].geometry.location;

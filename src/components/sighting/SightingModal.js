@@ -112,6 +112,7 @@ export default class SightingModal extends React.Component {
             <Button color="primary" 
             onClick={() => {
               this.toggle();
+              // this.props.geocodeLocation();
               this.props.constructNewSighting();
               }}>
               Add Sighting
