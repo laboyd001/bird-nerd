@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import APIManager from "../../modules/APIManager";
 import SightingCard from "./SightingCard";
 import SightingModal from "../sighting/SightingModal";
+import Geocode from "react-geocode";
+
+
 
 export default class SightingList extends Component {
   state = {
@@ -14,7 +17,9 @@ export default class SightingList extends Component {
     editLocation: "",
     editBirdId: "",
     editSummary: "",
-    editId: ""
+    editId: "",
+    lat: "",
+    lng: ""
   };
 
 
@@ -35,6 +40,10 @@ export default class SightingList extends Component {
       .then(user => {
         this.setState({ userName: user.name });
       })
+
+
+
+      
 
       .then(() => this.setState(newState));
   }
@@ -111,20 +120,58 @@ export default class SightingList extends Component {
   };
 
   constructNewSighting = () => {
+    
+   
+    console.log("lat", this.state.lat)
+
     if (this.state.bird === "") {
       window.alert("Please select a bird");
     } else {
-      const sighting = {
-        date: this.state.date,
-        location: this.state.location,
-        birdId: this.state.birds.find(b => b.name === this.state.birdId).id,
-        summary: this.state.summary,
-        user_id: +this.state.currentUserId
-      };
+
+      this.geocodeLocation()
+      // const sighting = {
+      //   date: this.state.date,
+      //   location: this.state.location,
+      //   birdId: this.state.birds.find(b => b.name === this.state.birdId).id,
+      //   summary: this.state.summary,
+      //   lat: this.state.lat,
+      //   lng:this.state.lng,
+      //   user_id: +this.state.currentUserId
+      // };
       // console.log("sighting", sighting);
-      this.addSighting(sighting);
+      // this.addSighting(sighting);
     }
   };
+
+  geocodeLocation= () => {
+    Geocode.setApiKey("AIzaSyBoPPKuvvE0W8dwOfm87Qd3m2RxZTwmHmo")
+
+    Geocode.fromAddress(this.state.location).then(
+      response => {
+        const latitude = response.results[0].geometry.location.lat;
+        // console.log("latitude",latitude);
+        const longitude = response.results[0].geometry.location.lng;
+        // console.log("longitude", longitude)
+        this.setState({lat: latitude,
+          lng: longitude})
+        // console.log("lat state", this.state.lat)
+        // this.setState({lng: longitude})
+        let sighting = {
+          date: this.state.date,
+          location: this.state.location,
+          birdId: this.state.birds.find(b => b.name === this.state.birdId).id,
+          summary: this.state.summary,
+          lat: this.state.lat,
+          lng:this.state.lng,
+          user_id: +this.state.currentUserId
+        }
+        this.addSighting(sighting);
+      },
+      error => {
+        console.error(error);
+      }
+    )
+  }
 
   constructEditedSighting = () => {
     const conditionBird = typeof this.state.editBirdId === "number";
@@ -152,6 +199,7 @@ export default class SightingList extends Component {
             sightings={this.state.sightings}
             handleFieldChange={this.handleFieldChange}
             constructNewSighting={this.constructNewSighting}
+            geocodeLocation={this.geocodeLocation}
           />
         </div>
         <section className="sightings">
