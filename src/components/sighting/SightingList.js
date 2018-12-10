@@ -121,7 +121,7 @@ export default class SightingList extends Component {
         summary: this.state.summary,
         user_id: +this.state.currentUserId
       };
-      console.log("sighting", sighting);
+      // console.log("sighting", sighting);
       this.addSighting(sighting);
     }
   };
@@ -137,7 +137,7 @@ export default class SightingList extends Component {
       summary: this.state.editSummary,
       id: this.state.editId
     };
-    console.log("edit sighting", editSighting);
+    // console.log("edit sighting", editSighting);
 
     this.editSighting(editSighting.id, editSighting);
   };

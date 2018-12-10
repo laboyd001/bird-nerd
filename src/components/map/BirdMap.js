@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
-import GoogleMaps from "simple-react-google-maps"
-import APIManager from "../../modules/APIManager"
-// import Geocode from "react-geocode";
+import React from 'react';
+import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
+import APIManager from '../../modules/APIManager'
 
-export default class BirdMap extends Component {
 
-  state = {
-    sightings: []
-  }
+
+class BirdMap extends React.Component {
+    state = {
+      sightings:[],
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {}
+    }
 
   componentDidMount() {
     const newState = {};
@@ -18,34 +21,58 @@ export default class BirdMap extends Component {
       })
       .then(() => this.setState(newState));
   }
-
   
-  
-
-  getLocations() {
-    const locations = (this.state.sightings.map(place => 
-      place.location))
-      console.log("locations", locations)
+  onMarkerClick = (props, marker, e) => {
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
   }
-  
-  
-
+  onMapClick = (props) => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  }
   render() {
-    this.getLocations()
+    const style = {
+      width: '50vw',
+      height: '75vh',
+      'marginLeft': 'auto',
+      'marginRight': 'auto'
+    }
     return (
-       <GoogleMaps
-        apiKey = {"AIzaSyBoPPKuvvE0W8dwOfm87Qd3m2RxZTwmHmo"}
-        style={{height: "900px", width: "100%"}}
-        zoom={10}
-        center={{lat: 36.184568, lng: -86.647630}}
-        markers={
-          [
-          {lat: 36.203893, lng: -86.677757}
-          ]
-        }
-       />
+      <Map
+        item
+        xs = { 12 }
+        style = { style }
+        google = { this.props.google }
+        onClick = { this.onMapClick }
+        zoom = { 10 }
+        initialCenter = {{ lat: 36.184568, lng: -86.647630 }}
+      >
+        {this.state.sightings.map(item => (
+            <Marker
+              key={item.id}
+              onClick = { this.onMarkerClick }
+              title={item.location}
+              name={item.location}
+              position={{ lat: item.lat, lng: item.lng }}
+            />
+          ))}
+        <InfoWindow
+          marker = { this.state.activeMarker }
+          visible = { this.state.showingInfoWindow }
+        >
+        <p>{this.state.sightings.birdId}</p> 
+        </InfoWindow>
+      </Map>
     );
   }
 }
-
-
+export default GoogleApiWrapper({
+    apiKey:"AIzaSyBoPPKuvvE0W8dwOfm87Qd3m2RxZTwmHmo"
+})(BirdMap)

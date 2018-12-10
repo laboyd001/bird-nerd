@@ -22,7 +22,7 @@ export default class BirdList extends Component {
   getUniqueType() {
     const birds = this.state.birds;
     const typeSelection = [...new Set(birds.map(item => item.type))];
-    console.log("type", typeSelection);
+    // console.log("type", typeSelection);
     return typeSelection.map((type, index) => (
       <option key={index}>{type}</option>
     ));
@@ -31,7 +31,7 @@ export default class BirdList extends Component {
   getUniqueColor() {
     const birds = this.state.birds;
     const colorSelection = [...new Set(birds.map(item => item.color))];
-    console.log("color", colorSelection);
+    // console.log("color", colorSelection);
     return colorSelection.map((color, index) => (
       <option key={index}>{color}</option>
     ));
