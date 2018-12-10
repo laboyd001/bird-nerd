@@ -6,7 +6,8 @@ export default class BirdList extends Component {
   state = {
     birds: [],
     type: "",
-    color: ""
+    color: "",
+    hideSelector: false
   };
 
   componentDidMount() {
@@ -18,6 +19,11 @@ export default class BirdList extends Component {
       })
       .then(() => this.setState(newState));
   }
+
+  handleChangeSelect = () => {
+    const currentState = this.state.hideSelector;
+    this.setState({ hideSelector: !currentState });
+  };
 
   getUniqueType() {
     const birds = this.state.birds;
@@ -106,6 +112,7 @@ export default class BirdList extends Component {
                 <button
                   onClick={() => {
                     this.getBirdType(this.state.type);
+                    this.handleChangeSelect();
                   }}
                 >
                   Choose
@@ -113,6 +120,7 @@ export default class BirdList extends Component {
                 <button
                   onClick={() => {
                     this.getAllBirds();
+                    this.handleChangeSelect();
                   }}
                 >
                   Clear
@@ -120,7 +128,7 @@ export default class BirdList extends Component {
               </div>
             </div>
 
-            <div className="bird-color">
+            <div className={this.state.hideSelector ? "bird-color" :"hide"}>
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
@@ -146,6 +154,7 @@ export default class BirdList extends Component {
                 <button
                   onClick={() => {
                     this.getAllBirds();
+                    this.handleChangeSelect();
                   }}
                 >
                   Clear
