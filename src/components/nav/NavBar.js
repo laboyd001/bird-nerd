@@ -61,6 +61,16 @@ export default class NavBar extends React.Component {
                     </Link>
                   </NavItem>
                   <NavItem>
+                    <Link className="text-light nav-link" to="/map">
+                      Map
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link className="text-light nav-link" to="/map2">
+                      Map2
+                    </Link>
+                  </NavItem>
+                  <NavItem>
                     <Link className="text-light nav-link" to="/welcome" onClick={()=> this.logoutUser()}>
                       Logout
                     </Link>
