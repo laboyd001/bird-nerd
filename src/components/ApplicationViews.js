@@ -3,7 +3,6 @@ import { Route, Redirect } from "react-router-dom";
 import SightingList from "./sighting/SightingList";
 import BirdList from "./bird/BirdList";
 import BirdMap from "./map/BirdMap"
-import Map from "./map/Map"
 import APIManager from "../modules/APIManager";
 import NavBar from "./nav/NavBar";
 import Welcome from './authentication/Welcome'
@@ -61,19 +60,6 @@ export default class ApplicationViews extends Component {
             if (this.isAuthenticated()) {
             return (
             <BirdMap />
-            );
-           } else {
-             return <Redirect to="/welcome" />;
-           }
-         }}
-       />
-       <Route
-          exact
-          path="/map2"
-          render={props => {
-            if (this.isAuthenticated()) {
-            return (
-            <Map />
             );
            } else {
              return <Redirect to="/welcome" />;
