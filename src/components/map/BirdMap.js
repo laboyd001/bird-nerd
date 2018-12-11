@@ -10,11 +10,28 @@ class BirdMap extends React.Component {
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
-      currentUserId: this.props.getCurrentUser()
+      currentUserId: this.props.getCurrentUser(),
+      userLocation: {lat: 36.184568, lng: -86.647630},
+      loading:true
     }
+
 
   componentDidMount() {
     const newState = {};
+
+    navigator.geolocation.getCurrentPosition(
+      position=> {
+        const {latitude, longitude} = position.coords;
+
+        this.setState({
+          userLocation: {lat: latitude, lng: longitude}, 
+          loading: false
+        });
+      },
+      ()=> {
+        this.setState({loading:false})
+      }
+    )
 
     APIManager.getAllEntries("sightings", `?user_id=${this.state.currentUserId}&_expand=bird`)
       .then(sightings => {
@@ -39,12 +56,18 @@ class BirdMap extends React.Component {
     }
   }
   render() {
+    const  {loading, userLocation} = this.state;
     const style = {
       width: '90vw',
       height: '90vh',
       'marginLeft': 'auto',
       'marginRight': 'auto'
     }
+
+    if(loading) {
+      return null;
+    }
+   
     return (
       <Map
         item
@@ -53,7 +76,8 @@ class BirdMap extends React.Component {
         google = { this.props.google }
         onClick = { this.onMapClick }
         zoom = { 10 }
-        initialCenter = {{ lat: 36.184568, lng: -86.647630 }}
+        initialCenter = {userLocation}
+      
       >
         {this.state.sightings.map(item => (
             <Marker
