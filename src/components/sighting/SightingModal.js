@@ -99,7 +99,7 @@ export default class SightingModal extends React.Component {
                   </span>
                 </div>
                 <input
-                  type="text"
+                  type="textarea"
                   className="form-control"
                   onChange={this.props.handleFieldChange}
                   id="summary"
@@ -112,7 +112,6 @@ export default class SightingModal extends React.Component {
             <Button color="primary" 
             onClick={() => {
               this.toggle();
-              // this.props.geocodeLocation();
               this.props.constructNewSighting();
               }}>
               Add Sighting

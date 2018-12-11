@@ -40,8 +40,8 @@ class BirdMap extends React.Component {
   }
   render() {
     const style = {
-      width: '50vw',
-      height: '75vh',
+      width: '90vw',
+      height: '90vh',
       'marginLeft': 'auto',
       'marginRight': 'auto'
     }
@@ -81,5 +81,5 @@ class BirdMap extends React.Component {
   }
 }
 export default GoogleApiWrapper({
-    apiKey:"AIzaSyBoPPKuvvE0W8dwOfm87Qd3m2RxZTwmHmo"
+    apiKey:(process.env.REACT_APP_API_KEY_Google)
 })(BirdMap)
