@@ -98,8 +98,8 @@ export default class SightingModal extends React.Component {
                     Sighting Summary
                   </span>
                 </div>
-                <input
-                  type="textarea"
+                <textarea
+                  type="text"
                   className="form-control"
                   onChange={this.props.handleFieldChange}
                   id="summary"

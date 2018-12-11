@@ -30,7 +30,7 @@ export default class SightingList extends Component {
 
     APIManager.getAllEntries(
       "sightings",
-      `?user_id=${this.state.currentUserId}&_sort=date&_order=asc&_expand=bird`
+      `?user_id=${this.state.currentUserId}&_sort=date&_order=desc&_expand=bird`
     ).then(sightings => {
       this.setState({ sightings: sightings });
     });
@@ -49,7 +49,7 @@ export default class SightingList extends Component {
           "sightings",
           `?user_id=${
             this.state.currentUserId
-          }&_sort=date&_order=asc&_expand=bird`
+          }&_sort=date&_order=desc&_expand=bird`
         )
       )
       .then(sightings =>
@@ -66,7 +66,7 @@ export default class SightingList extends Component {
           "sightings",
           `?user_id=${
             this.state.currentUserId
-          }&_sort=date&_order=asc&_expand=bird`
+          }&_sort=date&_order=desc&_expand=bird`
         )
       )
       .then(sightings =>
@@ -82,7 +82,7 @@ export default class SightingList extends Component {
           "sightings",
           `?user_id=${
             this.state.currentUserId
-          }&_sort=date&_order=asc&_expand=bird`
+          }&_sort=date&_order=desc&_expand=bird`
         )
       )
       .then(sightings =>
@@ -122,17 +122,6 @@ export default class SightingList extends Component {
       window.alert("Please select a bird");
     } else {
       this.geocodeLocation();
-      // const sighting = {
-      //   date: this.state.date,
-      //   location: this.state.location,
-      //   birdId: this.state.birds.find(b => b.name === this.state.birdId).id,
-      //   summary: this.state.summary,
-      //   lat: this.state.lat,
-      //   lng:this.state.lng,
-      //   user_id: +this.state.currentUserId
-      // };
-      // console.log("sighting", sighting);
-      // this.addSighting(sighting);
     }
   };
 
