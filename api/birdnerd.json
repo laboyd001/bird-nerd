@@ -109,6 +109,16 @@
       "lng": -86.9054694,
       "user_id": 2,
       "id": 11
+    },
+    {
+      "date": "2018-12-11",
+      "location": "Edwin Warner Park",
+      "birdId": 9,
+      "summary": "Beautiful!!!!!  Yay!!",
+      "lat": 36.0611193,
+      "lng": -86.8979768,
+      "user_id": 1,
+      "id": 12
     }
   ],
   "birds": [
