@@ -10,9 +10,11 @@ export default class SightingCard extends Component {
       <React.Fragment>
         <div className="sighting-card" key={this.props.sighting.id}>
           <h5>Date:<br></br></h5>
+          <p>
           <Moment format="MMMM Do YYYY">
           {this.props.sighting.date}
           </Moment>
+          </p>
           <h5>Location:<br></br></h5>
           <p>{this.props.sighting.location}</p>
           <h5>Bird:<br></br></h5>
