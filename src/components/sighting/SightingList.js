@@ -40,11 +40,6 @@ export default class SightingList extends Component {
       .then(user => {
         this.setState({ userName: user.name });
       })
-
-
-
-      
-
       .then(() => this.setState(newState));
   }
 
@@ -120,14 +115,9 @@ export default class SightingList extends Component {
   };
 
   constructNewSighting = () => {
-    
-   
-    console.log("lat", this.state.lat)
-
     if (this.state.bird === "") {
       window.alert("Please select a bird");
     } else {
-
       this.geocodeLocation()
       // const sighting = {
       //   date: this.state.date,
@@ -144,7 +134,7 @@ export default class SightingList extends Component {
   };
 
   geocodeLocation= () => {
-    Geocode.setApiKey("AIzaSyBoPPKuvvE0W8dwOfm87Qd3m2RxZTwmHmo")
+    Geocode.setApiKey(process.env.REACT_APP_API_KEY_Google)
 
     Geocode.fromAddress(this.state.location).then(
       response => {
@@ -155,7 +145,6 @@ export default class SightingList extends Component {
         this.setState({lat: latitude,
           lng: longitude})
         // console.log("lat state", this.state.lat)
-        // this.setState({lng: longitude})
         let sighting = {
           date: this.state.date,
           location: this.state.location,
