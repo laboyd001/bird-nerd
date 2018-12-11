@@ -41,15 +41,12 @@ export default class NavBar extends React.Component {
         <React.Fragment>
           <div>
             <Navbar color="dark" light expand="md">
-              <NavbarBrand className="text-light" href="/">
+              <h1 className="text-light big-header" href="/">
                 Bird Nerd      
-             </NavbarBrand>
+             </h1>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                  {/* <NavItem>
-                    
-                  </NavItem> */}
                   <NavItem>
                     <Link className="text-light nav-link" to="/">
                       Sightings
@@ -78,13 +75,10 @@ export default class NavBar extends React.Component {
       );
     } else {
       return (
-        // <div className="welcome-div">
-        //   <h1>Bird Nerd</h1>
-        // </div>
         <Navbar color="dark" light expand="md">
-        <NavbarBrand className="text-light" href="/">
+        <h1 className="text-light big-header" href="/">
           Bird Nerd
-        </NavbarBrand>
+        </h1>
         </Navbar>
       );
     }
