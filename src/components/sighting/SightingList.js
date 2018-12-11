@@ -4,8 +4,6 @@ import SightingCard from "./SightingCard";
 import SightingModal from "../sighting/SightingModal";
 import Geocode from "react-geocode";
 
-
-
 export default class SightingList extends Component {
   state = {
     birds: [],
@@ -18,10 +16,11 @@ export default class SightingList extends Component {
     editBirdId: "",
     editSummary: "",
     editId: "",
+    editLat:"",
+    editLng:"",
     lat: "",
     lng: ""
   };
-
 
   componentDidMount() {
     const newState = {};
@@ -97,6 +96,8 @@ export default class SightingList extends Component {
     editLocation,
     editBirdId,
     editSummary,
+    editLat,
+    editLng,
     editId
   ) => {
     this.setState({
@@ -104,6 +105,8 @@ export default class SightingList extends Component {
       editLocation: editLocation,
       editBirdId: editBirdId,
       editSummary: editSummary,
+      editLat: editLat,
+      editLng: editLng,
       editId: editId
     });
   };
@@ -118,7 +121,7 @@ export default class SightingList extends Component {
     if (this.state.bird === "") {
       window.alert("Please select a bird");
     } else {
-      this.geocodeLocation()
+      this.geocodeLocation();
       // const sighting = {
       //   date: this.state.date,
       //   location: this.state.location,
@@ -133,49 +136,53 @@ export default class SightingList extends Component {
     }
   };
 
-  geocodeLocation= () => {
-    Geocode.setApiKey(process.env.REACT_APP_API_KEY_Google)
+  geocodeLocation = () => {
+    Geocode.setApiKey(process.env.REACT_APP_API_KEY_Google);
 
     Geocode.fromAddress(this.state.location).then(
       response => {
         const latitude = response.results[0].geometry.location.lat;
-        // console.log("latitude",latitude);
         const longitude = response.results[0].geometry.location.lng;
-        // console.log("longitude", longitude)
-        this.setState({lat: latitude,
-          lng: longitude})
-        // console.log("lat state", this.state.lat)
+        this.setState({ lat: latitude, lng: longitude });
         let sighting = {
           date: this.state.date,
           location: this.state.location,
           birdId: this.state.birds.find(b => b.name === this.state.birdId).id,
           summary: this.state.summary,
           lat: this.state.lat,
-          lng:this.state.lng,
+          lng: this.state.lng,
           user_id: +this.state.currentUserId
-        }
+        };
         this.addSighting(sighting);
       },
       error => {
         console.error(error);
       }
-    )
-  }
+    );
+  };
 
   constructEditedSighting = () => {
+    Geocode.setApiKey(process.env.REACT_APP_API_KEY_Google);
     const conditionBird = typeof this.state.editBirdId === "number";
-    const editSighting = {
-      date: this.state.editDate,
-      location: this.state.editLocation,
-      birdId: conditionBird
-        ? this.state.editBirdId
-        : this.state.birds.find(b => b.name === this.state.editBirdId).id,
-      summary: this.state.editSummary,
-      id: this.state.editId
-    };
-    // console.log("edit sighting", editSighting);
-
-    this.editSighting(editSighting.id, editSighting);
+    Geocode.fromAddress(this.state.editLocation).then(response => {
+      const latitude = response.results[0].geometry.location.lat;
+      const longitude = response.results[0].geometry.location.lng;
+      this.setState({ editLat: latitude, editLng: longitude });
+      const editSighting = {
+        date: this.state.editDate,
+        location: this.state.editLocation,
+        birdId: conditionBird
+          ? this.state.editBirdId
+          : this.state.birds.find(b => b.name === this.state.editBirdId).id,
+        summary: this.state.editSummary,
+        lat: this.state.editLat,
+        lng: this.state.editLng,
+        id: this.state.editId
+      };
+      console.log("lat", this.state.editLat)
+      console.log("edit sighting", editSighting);
+      this.editSighting(editSighting.id, editSighting);
+    });
   };
 
   render() {
