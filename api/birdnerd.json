@@ -1,0 +1,566 @@
+{
+  "users": [
+    {
+      "username": "Lesley",
+      "password": "lesley",
+      "email": "lesley@lesley.com",
+      "id": 1
+    },
+    {
+      "name": "Sally",
+      "password": "sally",
+      "email": "sally@sally.com",
+      "id": 2
+    },
+    {
+      "name": "Tester",
+      "password": "test",
+      "email": "test@test.com",
+      "id": 3
+    }
+  ],
+  "sightings": [
+    {
+      "date": "2018-12-05",
+      "location": "Centennial Park",
+      "birdId": 1,
+      "summary": "This was a beautiful red bird!",
+      "lat": "36.149268",
+      "lng": "-86.812055",
+      "user_id": 1,
+      "id": 2
+    },
+    {
+      "date": "2018-12-06",
+      "location": "NSS",
+      "birdId": 2,
+      "summary": "While I was getting my functionality to work I spotted this beautiful bird.",
+      "lat": "36.132817",
+      "lng": "-86.756593",
+      "user_id": 1,
+      "id": 3
+    },
+    {
+      "date": "2018-12-07",
+      "location": "My House",
+      "birdId": 2,
+      "summary": "This morning I spotted this amazing bird perched in the tree.   I thing it was hunting.",
+      "lat": "36.184724",
+      "lng": "-86.647651",
+      "user_id": 1,
+      "id": 4
+    },
+    {
+      "date": "2018-12-01",
+      "location": "3132 Staffford Drive Nashville",
+      "birdId": 13,
+      "summary": "Spotted a woodpecker at my house.",
+      "lat": 36.1845071,
+      "lng": -86.64761879999999,
+      "user_id": 1,
+      "id": 6
+    },
+    {
+      "date": "2018-12-10",
+      "location": "Beaman Park Nashville, TN",
+      "birdId": 9,
+      "summary": "Cool little gray bird",
+      "lat": 36.2693775,
+      "lng": -86.9054694,
+      "user_id": 1,
+      "id": 7
+    },
+    {
+      "date": "2018-12-10",
+      "location": "Percy Warner Park",
+      "birdId": 2,
+      "summary": "Awesome hawk!",
+      "lat": 36.0611193,
+      "lng": -86.8979768,
+      "user_id": 1,
+      "id": 8
+    },
+    {
+      "date": "2018-12-02",
+      "location": "Shelby Park",
+      "birdId": 4,
+      "summary": "Wow, I can't believe I spotted this bird in Shelby park!  It was amazing!",
+      "lat": 36.1698461,
+      "lng": -86.73592699999999,
+      "user_id": 1,
+      "id": 9
+    },
+    {
+      "date": "2018-12-11",
+      "location": "Nashville Software School",
+      "birdId": 15,
+      "summary": "I saw a hungry goldfinch searching for food this morning.",
+      "lat": 36.1325338,
+      "lng": -86.75656420000001,
+      "user_id": 2,
+      "id": 10
+    },
+    {
+      "date": "2018-12-10",
+      "location": "Beaman Park",
+      "birdId": 42,
+      "summary": "Nevermore",
+      "lat": 36.2693775,
+      "lng": -86.9054694,
+      "user_id": 2,
+      "id": 11
+    }
+  ],
+  "birds": [
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24909501/medium",
+      "name": "Northern Cardinal",
+      "sex": "male",
+      "description": "The Northern Cardinal, named for the male's red plumage, is found throughout eastern and central North America from southern Canada into parts of Mexico and Central America.",
+      "color": "Red",
+      "type": "Songbird",
+      "id": 1
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27366481/large",
+      "name": "Red-tailed Hawk",
+      "sex": "male",
+      "description": "One of the most widespread and commonly observed birds of prey in North America, the Red-tailed Hawk occupies a broad range of habitats from central Alaska south to Venezuela and east to the Virgin Islands.",
+      "color": "Brown",
+      "type": "Bird of Prey",
+      "id": 2
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/41090601/medium",
+      "name": "Mallard",
+      "sex": "male",
+      "description": "The most familiar and widely distributed of the dabbling ducks, the Mallard is often the standard against which all other ducks are compared",
+      "color": "Green",
+      "type": "Waterfowl",
+      "id": 3
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27307401/large",
+      "name": "Great Blue Heron",
+      "sex": "male",
+      "description": "The Great Blue Heron is one of the most widespread and adaptable wading birds in North America",
+      "color": "Gray",
+      "type": "Shorebird",
+      "id": 4
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24899811/medium",
+      "name": "Northern Cardinal (female)",
+      "sex": "female",
+      "description": "Female song from the nest appears to provide the male with information about whether to bring food to the nest.",
+      "color": "Gray",
+      "type": "Songbird",
+      "id": 5
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24947251/medium",
+      "name": "House Finch",
+      "sex": "male",
+      "description": "One of the most common and numerous birds throughout much of the contiguous United States, southern Canada, and Mexico, the House Finch is a bird of remarkable records.",
+      "color": "Red",
+      "type": "Songbird",
+      "id": 6
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24947261/medium",
+      "name": "House Finch (female)",
+      "sex": "female",
+      "description": "Originally a bird of hot deserts and dry open habitats of the southwest, it now occurs in nearly all types of landscapes and climates in North America, from edges of northern taiga to ocean coasts to metropolitan areas.",
+      "color": "Brown",
+      "type": "Songbird",
+      "id": 7
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27258731/large",
+      "name": "Black-capped Chickadee",
+      "sex": "male",
+      "description": "One of the most familiar and widespread birds in North America, the Black-capped Chickadee is a non-migratory species found coast to coast, including much of Canada and the northern two thirds of the United States.",
+      "color": "Black and White",
+      "type": "Songbird",
+      "id": 8
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24978181/medium",
+      "name": "Tufted Titmouse",
+      "sex": "male",
+      "description": "This common year-round resident of the deciduous and mixed forests of eastern North America is also found in older urban and suburban areas with mature trees and vegetation.",
+      "color": "Gray",
+      "type": "Songbird",
+      "id": 9
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/29444821/large",
+      "name": "Hairy Woodpecker",
+      "sex": "male",
+      "description": "Dappled black and white, like light filtering through the forest canopy onto a tree trunk, the Hairy Woodpecker is among the most widespread North American birds. ",
+      "color": "Black and White",
+      "type": "Songbird",
+      "id": 10
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/111738571/medium",
+      "name": "Hairy Woodpecker (female)",
+      "sex": "female",
+      "description": "It is resident in forest and woodland habitats from near treeline in the far north and on mountains to the highlands of western Panama, many continental islands, and some islands of the Bahamas.",
+      "color": "Black and White",
+      "type": "Songbird",
+      "id": 11
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/29973041/large",
+      "name": "Red-bellied Woodpecker",
+      "sex": "male",
+      "description": "This familiar, eastern U.S. woodpecker is an active and vocal species, with a preference for humid forests dominated by pines or hardwoods, or a mixture of both.",
+      "color": "Black and White",
+      "type": "Songbird",
+      "id": 12
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24906321/medium",
+      "name": "Red-bellied Woodpecker (female)",
+      "sex": "female",
+      "description": "It seldom excavates wood for insects; instead, depending on season, it forages opportunistically for a wide range of fruit, mast, seeds and arboreal arthropods.",
+      "color": "Black and White",
+      "type": "Songbird",
+      "id": 13
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/64344741/large",
+      "name": "American Goldfinch",
+      "sex": "male",
+      "description": "The American Goldfinch is an abundant and widely distributed species in temperate North America, common in summer in weedy fields, river flood plains, early second-growth forest, orchards, and suburban gardens—habitats where they find their major foods and suitable nesting sites.",
+      "color": "Yellow",
+      "type": "Songbird",
+      "id": 14
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/63261291/medium",
+      "name": "American Goldfinch (female)",
+      "sex": "female",
+      "description": "The American Goldfinch is both sexually and seasonally dimorphic in plumage. The males in their bright yellow breeding plumage are a familiar sight, but the less brightly colored females are often overlooked. Both sexes are frequently misidentified in their muted nonbreeding plumages.",
+      "color": "Yellow",
+      "type": "Songbird",
+      "id": 15
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/29063561/large",
+      "name": "American Robin",
+      "sex": "male",
+      "description": "The American Robin is the largest, most abundant and broadly distributed thrush in North America.",
+      "color": "Brown",
+      "type": "Songbird",
+      "id": 16
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/28489111/large",
+      "name": "Blue Jay",
+      "sex": "male",
+      "description": "No doubt the Blue Jay was one of the first North American birds to become well known to Europeans.",
+      "color": "Blue",
+      "type": "Songbird",
+      "id": 17
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24906951/medium",
+      "name": "Eastern Bluebird",
+      "sex": "male",
+      "description": "Eastern Bluebirds have gorgeous plumage, nest in open, often disturbed, human-modified habitats, and, as secondary cavity nesters, readily take to artificial nesting cavities.",
+      "color": "Blue",
+      "type": "Songbird",
+      "id": 18
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/28488801/large",
+      "name": "Northern Flicker",
+      "sex": "male",
+      "description": "The Northern Flicker is a common, primarily ground-foraging woodpecker that occurs in most wooded regions of North America.",
+      "color": "Brown",
+      "type": "Songbird",
+      "id": 19
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27623091/medium",
+      "name": "Northern Flicker (female)",
+      "sex": "female",
+      "description": "Sexually dimorphic: malar stripe usually present only in male.",
+      "color": "Brown",
+      "type": "Songbird",
+      "id": 20
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27253651/large",
+      "name": "Barn Owl",
+      "sex": "male",
+      "description": "The Barn Owl is one of the most widespread of all owls and, indeed, is among the most widely distributed of all land birds.",
+      "color": "Brown",
+      "type": "Bird of Prey",
+      "id": 21
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24910491/medium",
+      "name": "Barred Owl",
+      "sex": "male",
+      "description": "Widely distributed through North America, the Barred Owl is a resident of deep forests, including swamps, riparian, and upland habitats.",
+      "color": "Brown",
+      "type": "Bird of Prey",
+      "id": 22
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27303111/large",
+      "name": "Eastern Screech-Owl",
+      "sex": "male",
+      "description": "The Eastern Screech-Owl has the broadest ecological niche of any owl in its range. They occur east of the Rocky Mountains, where they are permanent residents of both rural and urban habitats from south of the Canadian boreal forest to near the Tropic of Cancer in Mexico.",
+      "color": "Brown",
+      "type": "Bird of Prey",
+      "id": 23
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27308051/large",
+      "name": "Great Horned Owl",
+      "sex": "male",
+      "description": "The Great Horned Owl - large, powerful, and long-lived - is adapted by its anatomy, physiology, and behavior to survive in any climate but arctic-alpine regions.",
+      "color": "Brown",
+      "type": "Bird of Prey",
+      "id": 24
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24912671/medium",
+      "name": "Bald Eagle",
+      "sex": "male",
+      "description": "Selected as the national emblem of the United States in 1782 by Congress, in spite of Benjamin Franklin's arguments that the Wild Turkey would serve better in that capacity, the Bald Eagle has long been a key symbol in the human cultures of the Americas",
+      "color": "Black and White",
+      "type": "Bird of Prey",
+      "id": 25
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27366311/large",
+      "name": "Red-Shouldered Hawk",
+      "sex": "male",
+      "description": "The Red-shouldered Hawk inhabits a broad array of North American forests, but favors mature, mixed deciduous-coniferous woodlands, especially bottomland hardwood, riparian areas, and flooded deciduous swamps.",
+      "color": "Brown",
+      "type": "Bird of Prey",
+      "id": 26
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/29972621/large",
+      "name": "Wild Turkey",
+      "sex": "male",
+      "description": "The Wild Turkey, a symbolic and endemic North American species, is found from s. Canada throughout the 48 contiguous states and Hawaii, and along the Sierra Madre Occidental mountain range to central Mexico.",
+      "color": "Brown",
+      "type": "GameFowl",
+      "id": 27
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/28487741/large",
+      "name": "Ring-necked Pheasant",
+      "sex": "male",
+      "description": "This species is exceptionally popular as an upland game bird throughout much of its range, and it may be the most studied species of Galliformes in the world.",
+      "color": "Brown",
+      "type": "GameFowl",
+      "id": 28
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/28487521/large",
+      "name": "Wood Duck",
+      "sex": "male",
+      "description": "It is also the most successful of the seven species of North American ducks that regularly nest in natural cavities.",
+      "color": "Brown",
+      "type": "Waterfowl",
+      "id": 29
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24951171/medium",
+      "name": "Wood Duck (female)",
+      "sex": "female",
+      "description": "Females appear similar year-round, and are unlikely to be confused with any other North American duck. Immatures and non-breeding males resemble females.",
+      "color": "Brown",
+      "type": "Waterfowl",
+      "id": 30
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/28487551/large",
+      "name": "American Black Duck",
+      "sex": "male",
+      "description": "This large dabbling duck breeds in a variety of North American wetlands, including freshwater wetlands created by beaver, brooks lined by speckled alder, lakes, ponds, and bogs throughout mixed hardwood and boreal forests; and salt marshes. ",
+      "color": "Brown",
+      "type": "Waterfowl",
+      "id": 31
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27272171/large",
+      "name": "Canada Goose",
+      "sex": "male",
+      "description": "This harbinger of the changing seasons, so aptly described above by Sigurd F. Olson, is experienced each fall by naturalists across the continent.",
+      "color": "Brown",
+      "type": "Waterfowl",
+      "id": 32
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/28487501/large",
+      "name": "Trumpeter Swan",
+      "sex": "male",
+      "description": "The largest native North American waterfowl, the Trumpeter Swan is a long-lived, social species, conspicuous by its large size, all-white plumage, and trumpet-like call.",
+      "color": "White",
+      "type": "Waterfowl",
+      "id": 33
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27361521/large",
+      "name": "Osprey",
+      "sex": "male",
+      "description": "Among North America’s best-studied birds of prey, the widely admired Osprey is the continent’s only raptor that plunge-dives to catch live fish as its main prey source.",
+      "color": "Black and White",
+      "type": "Bird of Prey",
+      "id": 34
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24946561/medium",
+      "name": "Brown Pelican",
+      "sex": "male",
+      "description": "The Brown Pelican is a permanent resident of the coastal marine environment from central North America southward to northern South America.",
+      "color": "Black and White",
+      "type": "Shorebird",
+      "id": 35
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/28487841/large",
+      "name": "Anihinga",
+      "sex": "male",
+      "description": "The Anhinga is among the most distinctive of North American birds, with long, snakelike neck, straight bill, large fanlike tail resembling that of a turkey.",
+      "color": "Black",
+      "type": "Shorebird",
+      "id": 36
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27439261/large",
+      "name": "Wood Stork",
+      "sex": "male",
+      "description": "The only stork and the largest wading bird that breeds in the United States, the Wood Stork is a distinctive wetland bird found primarily in the Southeast.",
+      "color": "White",
+      "type": "Waterfowl",
+      "id": 37
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27250941/large",
+      "name": "Baltimore Oriole",
+      "sex": "male",
+      "description": "Historically a bird of woodland edge and open riparian woods, the Baltimore Oriole has adapted well to urban parks and suburban landscapes.",
+      "color": "Orange",
+      "type": "Songbird",
+      "id": 38
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24910211/medium",
+      "name": "Baltimore Oriole (female)",
+      "sex": "female",
+      "description": "Females highly variable, probably becoming more brightly colored with age; in rare cases, female closely resembles adult male.",
+      "color": "Yellow",
+      "type": "Songbird",
+      "id": 39
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/31474491/large",
+      "name": "Black-billed Magpie",
+      "sex": "male",
+      "description": "A strikingly marked and conspicuous bird of the cold, shrub-steppe environment of western North America, the Black-billed Magpie has attracted much attention and had a colorful association with early Americans.",
+      "color": "Black and White",
+      "type": "Songbird",
+      "id": 40
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27214541/large",
+      "name": "American Crow",
+      "sex": "male",
+      "description": "This cunning, inquisitive, vocal opportunist is one of the most widespread of North American birds.",
+      "color": "Black",
+      "type": "Songbird",
+      "id": 41
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27299051/large",
+      "name": "Common Raven",
+      "sex": "male",
+      "description": "This large, black, majestic bird is geographically and ecologically one of the most widespread naturally occurring birds in the world.",
+      "color": "Black",
+      "type": "Songbird",
+      "id": 42
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24954191/medium",
+      "name": "Ruby-throated Hummingbird",
+      "sex": "male",
+      "description": "The Ruby-throated Hummingbird, eastern North America's only species of breeding hummingbird, is a familiar summer inhabitant of woodlands, parks, and gardens from central Canada to the Gulf Coast.",
+      "color": "Green",
+      "type": "Songbird",
+      "id": 43
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27737521/large",
+      "name": "Song Sparrow",
+      "sex": "male",
+      "description": "This familiar sparrow is one of the most diverse and widespread songbirds in North America, with 24 diagnosable subspecies (52 named) breeding from Newfoundland to the Aleutian islands of Alaska and south to central Mexico.",
+      "color": "Brown",
+      "type": "Songbird",
+      "id": 44
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27215541/large",
+      "name": "American Kestrel",
+      "sex": "male",
+      "description": "Formerly known as the Sparrow Hawk, the American Kestrel is the smallest, most numerous, and most widespread North American falcon.",
+      "color": "Brown",
+      "type": "Bird of Prey",
+      "id": 45
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27440961/large",
+      "name": "Yellow-throated Warbler",
+      "sex": "male",
+      "description": "This attractive warbler is a common woodland bird of the southeastern United States, where its loud, clear song filtering down from leafless trees is one of the earliest signs of spring.",
+      "color": "Gray",
+      "type": "Songbird",
+      "id": 46
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27311881/large",
+      "name": "House Sparrow",
+      "sex": "male",
+      "description": "The House Sparrow is one of a few species introduced in North America with great success. Introductions elsewhere, its own adaptability, and a preference for habitats modified by humans have made this species well known and generally common, with a nearly worldwide distribution. ",
+      "color": "Brown",
+      "type": "Songbird",
+      "id": 47
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27307641/large",
+      "name": "Great Egret",
+      "sex": "male",
+      "description": "Intermediate in size between the larger day herons and the smaller egrets, the elegant, stately Great Egret, in its dazzling white plumage, is widely recognized in North America and elsewhere. ",
+      "color": "White",
+      "type": "Shorebird",
+      "id": 48
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27412261/large",
+      "name": "Tricolored Heron",
+      "sex": "male",
+      "description": "The diet of this heron consists almost entirely of small estuarine and marsh fishes, which it acquires through a diverse array of foraging behaviors.",
+      "color": "Gray",
+      "type": "Shorebird",
+      "id": 49
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/30000851/large",
+      "name": "White Ibis",
+      "sex": "male",
+      "description": "The White Ibis is a striking, white wading bird with a long, distinctively decurved bill. It usually nests, feeds, and flies in large conspecific flocks, and in many ways epitomizes the freshwater and coastal wetlands of the southeastern United States.",
+      "color": "White",
+      "type": "Shorebird",
+      "id": 50
+    }
+  ]
+}
