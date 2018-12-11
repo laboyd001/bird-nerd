@@ -23,6 +23,12 @@
       "password": "jenn",
       "email": "jenn@jenn.com",
       "id": 4
+    },
+    {
+      "name": "ziggy",
+      "password": "ziggy",
+      "email": "ziggy@ziggy.com",
+      "id": 5
     }
   ],
   "sightings": [

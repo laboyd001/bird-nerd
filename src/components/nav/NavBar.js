@@ -4,11 +4,9 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  // NavbarBrand,
   Nav,
   NavItem
 } from "reactstrap";
-// import SightingModal from "../sighting/SightingModal";
 import "./NavBar.css";
 import bird from "./bird_logo_transparent.png"
 
