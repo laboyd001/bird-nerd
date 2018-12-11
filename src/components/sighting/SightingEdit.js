@@ -29,6 +29,8 @@ export default class SightingEdit extends React.Component {
                   this.props.sighting.location,
                   this.props.sighting.birdId,
                   this.props.sighting.summary,
+                  this.props.sighting.lat,
+                  this.props.sighting.lng,
                   this.props.sighting.id
                 );
               }}>
