@@ -8,14 +8,23 @@ import {
   Button,
   ButtonGroup
 } from "reactstrap";
+import "./auth.css"
+import bird from "./bird_nerd_logo.png"
+
+
 
 export default class Login extends Component {
   render() {
     return (
       <React.Fragment>
         <Container>
+          <div className="logo">
+        <img src={bird} className="icon-bird" alt="bird" />
+        </div>
           <div className={this.props.hideLoginForm ? "hide" : "login-form"}>
             <div className="login-form">
+            
+
               <h2>Please sign in</h2>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">
