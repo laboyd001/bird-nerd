@@ -1,0 +1,17 @@
+
+
+/* body {
+  background-image: url(https://c1.staticflickr.com/2/1008/1373175391_859e673731_b.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+} */
+
+.logo{
+  display:flex;
+  justify-content: center;
+}
+.icon-bird{
+  height: 300px;
+  width: 300px;
+}

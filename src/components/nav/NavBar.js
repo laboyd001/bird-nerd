@@ -4,12 +4,14 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
+  // NavbarBrand,
   Nav,
   NavItem
 } from "reactstrap";
 // import SightingModal from "../sighting/SightingModal";
 import "./NavBar.css";
+import bird from "./bird_logo_transparent.png"
+
 
 export default class NavBar extends React.Component {
   isAuthenticated = () =>
@@ -41,6 +43,7 @@ export default class NavBar extends React.Component {
         <React.Fragment>
           <div>
             <Navbar color="dark" light expand="md">
+            <img src={bird} className="icon-bird-small" alt="bird" />
               <h1 className="text-light big-header" href="/">
                 Bird Nerd      
              </h1>
@@ -76,6 +79,7 @@ export default class NavBar extends React.Component {
     } else {
       return (
         <Navbar color="dark" light expand="md">
+        <img src={bird} className="icon-bird-small" alt="bird" />
         <h1 className="text-light big-header" href="/">
           Bird Nerd
         </h1>
