@@ -1,5 +1,5 @@
 # Bird Nerd
-Bird Nerd is a app for casual bird enthusiasts that enjoy birdwatching, but don't have the best memory.  This app provides the user a tool where they can record a bird sighting, lookup a bird by type and color, and view their bird sightings on a map.  Bird Nerd is written using the React framework.
+Bird Nerd is an app for casual bird enthusiasts that enjoy birdwatching, but don't have the best memory.  This app provides the user a tool where they can record a bird sighting, lookup a bird by type and color, and view their bird sightings on a map.  Bird Nerd is written using the React framework.
 
 # Getting Started
 To run Bird Nerd locally, create an empty directory and clone the project by running the following command in your terminal: ```git@github.com:laboyd001/bird-nerd.git```
