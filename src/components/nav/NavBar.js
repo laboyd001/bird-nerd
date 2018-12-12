@@ -5,8 +5,7 @@ import {
   Navbar,
   NavbarToggler,
   Nav,
-  NavItem,
-  NavbarBrand
+  NavItem
 } from "reactstrap";
 import "./NavBar.css";
 import bird from "./bird_logo_transparent.png"

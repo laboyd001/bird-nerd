@@ -19,8 +19,8 @@ export default class Login extends Component {
       <React.Fragment>
         <Container>
           <div className="logo">
-        <img src={bird} className="icon-bird" alt="bird" />
-        </div>
+            <img src={bird} className="icon-bird" alt="bird" />
+          </div>
           <div className={this.props.hideLoginForm ? "hide" : "login-form"}>
             <div className="login-form">
             

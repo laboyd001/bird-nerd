@@ -53,26 +53,6 @@
       "id": 3
     },
     {
-      "date": "2018-12-07",
-      "location": "My House",
-      "birdId": 2,
-      "summary": "This morning I spotted this amazing bird perched in the tree.   I thing it was hunting.",
-      "lat": "36.184724",
-      "lng": "-86.647651",
-      "user_id": 1,
-      "id": 4
-    },
-    {
-      "date": "2018-12-01",
-      "location": "3132 Staffford Drive Nashville",
-      "birdId": 13,
-      "summary": "Spotted a woodpecker at my house.",
-      "lat": 36.1845071,
-      "lng": -86.64761879999999,
-      "user_id": 1,
-      "id": 6
-    },
-    {
       "date": "2018-12-10",
       "location": "Beaman Park Nashville, TN",
       "birdId": 9,
@@ -81,16 +61,6 @@
       "lng": -86.9054694,
       "user_id": 1,
       "id": 7
-    },
-    {
-      "date": "2018-12-10",
-      "location": "Percy Warner Park",
-      "birdId": 2,
-      "summary": "Awesome hawk!",
-      "lat": 36.0611193,
-      "lng": -86.8979768,
-      "user_id": 1,
-      "id": 8
     },
     {
       "date": "2018-12-02",
@@ -125,7 +95,7 @@
     {
       "date": "2018-12-11",
       "location": "Edwin Warner Park",
-      "birdId": 9,
+      "birdId": 4,
       "summary": "Beautiful!!!!!  Yay!!",
       "lat": 36.0611193,
       "lng": -86.8979768,
@@ -161,6 +131,16 @@
       "lng": -86.7249822,
       "user_id": 4,
       "id": 15
+    },
+    {
+      "date": "2018-12-12",
+      "location": "Caney Fork",
+      "birdId": 3,
+      "summary": "something here",
+      "lat": 36.2175836,
+      "lng": -86.6967543,
+      "user_id": 1,
+      "id": 16
     }
   ],
   "birds": [
@@ -271,15 +251,6 @@
       "color": "Black and White",
       "type": "Songbird",
       "id": 12
-    },
-    {
-      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24906321/medium",
-      "name": "Red-bellied Woodpecker (female)",
-      "sex": "female",
-      "description": "It seldom excavates wood for insects; instead, depending on season, it forages opportunistically for a wide range of fruit, mast, seeds and arboreal arthropods.",
-      "color": "Black and White",
-      "type": "Songbird",
-      "id": 13
     },
     {
       "image": "https://download.ams.birds.cornell.edu/api/v1/asset/64344741/large",
@@ -489,7 +460,7 @@
       "id": 36
     },
     {
-      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27439261/large",
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24901571/medium",
       "name": "Wood Stork",
       "sex": "male",
       "description": "The only stork and the largest wading bird that breeds in the United States, the Wood Stork is a distinctive wetland bird found primarily in the Southeast.",
@@ -525,7 +496,7 @@
       "id": 40
     },
     {
-      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27214541/large",
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24907061/medium",
       "name": "American Crow",
       "sex": "male",
       "description": "This cunning, inquisitive, vocal opportunist is one of the most widespread of North American birds.",
@@ -613,6 +584,15 @@
       "color": "White",
       "type": "Shorebird",
       "id": 50
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24913441/medium",
+      "name": "Black-footed Albatross",
+      "sex": "male",
+      "description": "The Black-footed Albatross is the only uniformly dark-plumaged albatross of the North Pacific Ocean.",
+      "color": "Black",
+      "type": "Shorebird",
+      "id": 51
     }
   ]
 }

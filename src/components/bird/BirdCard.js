@@ -1,22 +1,39 @@
 import React, { Component } from "react";
+import { CardText, CardBody,
+  CardTitle, CardSubtitle, Container } from 'reactstrap';
 import "./Bird.css";
 
 export default class BirdCard extends Component {
   render() {
     return (
       <React.Fragment>
+        <Container>
+        
         <div className="bird-card" key={this.props.bird.id}>
-          <div className="bird-image">
-            <img src={this.props.bird.image} className="bird-image" alt={this.props.bird.name}></img>
-          </div>
-          <div className="bird-details">
-            <p>Name: {this.props.bird.name}</p>
-            <p>Sex: {this.props.bird.sex}</p>
-            <p>Description: {this.props.bird.description}</p>
-            <p>Color: {this.props.bird.color}</p>
-            <p>Type: {this.props.bird.type}</p>
-          </div>
+          <CardBody>
+            <div className="bird-image">
+              <img src={this.props.bird.image} className="bird-image" alt={this.props.bird.name}></img>
+            </div>
+          </CardBody>
+          <CardBody>
+            <div className="bird-details">
+              <CardTitle>
+                {this.props.bird.name}
+              </CardTitle>
+              <CardSubtitle>
+                {this.props.bird.type}
+              </CardSubtitle>
+              <br></br>
+              <CardSubtitle>
+                Description:
+              </CardSubtitle>
+              <CardText>
+                {this.props.bird.description}
+              </CardText>
+            </div>
+          </CardBody>
         </div>
+        </Container>
       </React.Fragment>
     );
   }
