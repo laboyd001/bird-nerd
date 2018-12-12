@@ -53,16 +53,6 @@
       "id": 3
     },
     {
-      "date": "2018-12-01",
-      "location": "3132 Staffford Drive Nashville",
-      "birdId": 13,
-      "summary": "Spotted a woodpecker at my house.",
-      "lat": 36.1845071,
-      "lng": -86.64761879999999,
-      "user_id": 1,
-      "id": 6
-    },
-    {
       "date": "2018-12-10",
       "location": "Beaman Park Nashville, TN",
       "birdId": 9,
@@ -470,7 +460,7 @@
       "id": 36
     },
     {
-      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27439261/large",
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24901571/medium",
       "name": "Wood Stork",
       "sex": "male",
       "description": "The only stork and the largest wading bird that breeds in the United States, the Wood Stork is a distinctive wetland bird found primarily in the Southeast.",
@@ -506,7 +496,7 @@
       "id": 40
     },
     {
-      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/27214541/large",
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24907061/medium",
       "name": "American Crow",
       "sex": "male",
       "description": "This cunning, inquisitive, vocal opportunist is one of the most widespread of North American birds.",

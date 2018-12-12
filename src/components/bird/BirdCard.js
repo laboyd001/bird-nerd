@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardText, CardBody,
+import { CardText, CardBody,
   CardTitle, CardSubtitle, Container } from 'reactstrap';
 import "./Bird.css";
 

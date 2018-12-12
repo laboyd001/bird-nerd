@@ -94,11 +94,10 @@ class BirdMap extends React.Component {
           marker = { this.state.activeMarker }
           visible = { this.state.showingInfoWindow }
         >
-         <div>
-            <p>{this.state.selectedPlace.name}</p>
-            <p>{this.state.selectedPlace.summary}</p>
-            <p>{this.state.selectedPlace.bird}</p>
-         </div>
+            <h4 className="marker-info">{this.state.selectedPlace.name}</h4>
+            <h6 className="marker-info">{this.state.selectedPlace.bird}</h6>
+            <p className="marker-info">{this.state.selectedPlace.summary}</p>
+         
         </InfoWindow>
       </Map>
     );
