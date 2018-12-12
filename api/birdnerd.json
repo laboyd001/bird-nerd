@@ -141,6 +141,16 @@
       "lng": -86.7249822,
       "user_id": 4,
       "id": 15
+    },
+    {
+      "date": "2018-12-12",
+      "location": "Caney Fork",
+      "birdId": 3,
+      "summary": "something here",
+      "lat": 36.2175836,
+      "lng": -86.6967543,
+      "user_id": 1,
+      "id": 16
     }
   ],
   "birds": [
