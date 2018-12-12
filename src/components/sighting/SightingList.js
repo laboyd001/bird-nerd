@@ -3,6 +3,8 @@ import APIManager from "../../modules/APIManager";
 import SightingCard from "./SightingCard";
 import SightingModal from "../sighting/SightingModal";
 import Geocode from "react-geocode";
+// import BirdSearch from './BirdSearch'
+
 
 export default class SightingList extends Component {
   state = {
@@ -179,6 +181,9 @@ export default class SightingList extends Component {
       <React.Fragment>
         <div className="sighting-header">
           <h2 className="page-title">Sightings</h2>
+
+             
+
           <SightingModal
             birds={this.state.birds}
             sightings={this.state.sightings}
