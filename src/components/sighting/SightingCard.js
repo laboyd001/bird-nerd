@@ -10,7 +10,7 @@ export default class SightingCard extends Component {
   render() {
     return (
       <Container>
-      <Card>
+      <Card className="sighting-card">
         <CardBody>
           {/* <CardTitle>
           {this.props.sighting.bird.name}

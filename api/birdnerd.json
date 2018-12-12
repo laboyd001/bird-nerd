@@ -263,15 +263,6 @@
       "id": 12
     },
     {
-      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24906321/medium",
-      "name": "Red-bellied Woodpecker (female)",
-      "sex": "female",
-      "description": "It seldom excavates wood for insects; instead, depending on season, it forages opportunistically for a wide range of fruit, mast, seeds and arboreal arthropods.",
-      "color": "Black and White",
-      "type": "Songbird",
-      "id": 13
-    },
-    {
       "image": "https://download.ams.birds.cornell.edu/api/v1/asset/64344741/large",
       "name": "American Goldfinch",
       "sex": "male",
@@ -603,6 +594,15 @@
       "color": "White",
       "type": "Shorebird",
       "id": 50
+    },
+    {
+      "image": "https://download.ams.birds.cornell.edu/api/v1/asset/24913441/medium",
+      "name": "Black-footed Albatross",
+      "sex": "male",
+      "description": "The Black-footed Albatross is the only uniformly dark-plumaged albatross of the North Pacific Ocean.",
+      "color": "Black",
+      "type": "Shorebird",
+      "id": 51
     }
   ]
 }
