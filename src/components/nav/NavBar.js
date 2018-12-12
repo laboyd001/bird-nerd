@@ -5,7 +5,8 @@ import {
   Navbar,
   NavbarToggler,
   Nav,
-  NavItem
+  NavItem,
+  NavbarBrand
 } from "reactstrap";
 import "./NavBar.css";
 import bird from "./bird_logo_transparent.png"
@@ -42,9 +43,10 @@ export default class NavBar extends React.Component {
           <div>
             <Navbar color="dark" light expand="md">
             <img src={bird} className="icon-bird-small" alt="bird" />
-              <h1 className="text-light big-header" href="/">
-                Bird Nerd      
-             </h1>
+                <a href="/" className="text-light big-header" 
+                style={{ textDecoration: 'none' }}>
+                  Bird Nerd     
+                </a>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>

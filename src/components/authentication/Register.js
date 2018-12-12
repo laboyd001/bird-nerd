@@ -16,7 +16,7 @@ export default class Register extends Component {
       <Container>
       <div className={this.props.hideLoginForm ? "bryans__class" : "hide"}>
         <div className="login__form">
-          <h2>Register Here</h2>
+          <h2>Register</h2>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">
                   <InputGroupText>Username</InputGroupText>

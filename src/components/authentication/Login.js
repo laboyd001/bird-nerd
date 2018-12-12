@@ -25,7 +25,7 @@ export default class Login extends Component {
             <div className="login-form">
             
 
-              <h2>Please sign in</h2>
+              <h2>Sign In</h2>
               <InputGroup>
                 <InputGroupAddon addonType="prepend">
                   <InputGroupText>Email Address</InputGroupText>

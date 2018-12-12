@@ -151,6 +151,16 @@
       "lng": -85.3568923,
       "user_id": 4,
       "id": 14
+    },
+    {
+      "date": "2018-12-10",
+      "location": "Shelby Bottoms",
+      "birdId": 9,
+      "summary": "He has a cool mohawk!",
+      "lat": 36.1660742,
+      "lng": -86.7249822,
+      "user_id": 4,
+      "id": 15
     }
   ],
   "birds": [
