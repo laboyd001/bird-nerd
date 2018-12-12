@@ -53,16 +53,6 @@
       "id": 3
     },
     {
-      "date": "2018-12-07",
-      "location": "My House",
-      "birdId": 2,
-      "summary": "This morning I spotted this amazing bird perched in the tree.   I thing it was hunting.",
-      "lat": "36.184724",
-      "lng": "-86.647651",
-      "user_id": 1,
-      "id": 4
-    },
-    {
       "date": "2018-12-01",
       "location": "3132 Staffford Drive Nashville",
       "birdId": 13,
@@ -81,16 +71,6 @@
       "lng": -86.9054694,
       "user_id": 1,
       "id": 7
-    },
-    {
-      "date": "2018-12-10",
-      "location": "Percy Warner Park",
-      "birdId": 2,
-      "summary": "Awesome hawk!",
-      "lat": 36.0611193,
-      "lng": -86.8979768,
-      "user_id": 1,
-      "id": 8
     },
     {
       "date": "2018-12-02",
@@ -125,7 +105,7 @@
     {
       "date": "2018-12-11",
       "location": "Edwin Warner Park",
-      "birdId": 9,
+      "birdId": 4,
       "summary": "Beautiful!!!!!  Yay!!",
       "lat": 36.0611193,
       "lng": -86.8979768,
