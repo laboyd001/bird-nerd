@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import APIManager from '../../modules/APIManager'
+// import BirdSearch from './BirdSearch'
 
 export default class SightingModal extends React.Component {
   constructor(props) {
@@ -71,6 +72,10 @@ export default class SightingModal extends React.Component {
                   placeholder="Sighting Location"
                 />
               </div>
+
+               {/* <div>
+                <BirdSearch/>
+              </div> */}
 
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
