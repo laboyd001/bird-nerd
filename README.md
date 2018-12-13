@@ -58,6 +58,7 @@ To learn more about Reactstrap vist their documentation [reactstrap](https://rea
 
 ### Canva
 
+<img src="<img src="https://www.bootcdn.cn/assets/img/momentjs.svg?1541408619167" alt="moment.js" width="100px">" alt="canva" width="100px">
 For help with logos I visited the Canva website and found a simplistic bird logo.  I was able to create it in a couple different colors for usage in different components in the app.
 
 Check out [Canva](https://www.canva.com/)
