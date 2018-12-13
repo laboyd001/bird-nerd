@@ -1,7 +1,7 @@
 # Bird Nerd
 Bird Nerd is an app for casual bird enthusiasts that enjoy birdwatching, but don't have the best memory.  This app provides the user a tool where they can record a bird sighting, lookup a bird by type and color, and view their bird sightings on a map.  Bird Nerd is written using the React framework.
 
-# Getting Started
+## Getting Started
 To run Bird Nerd locally, create an empty directory and clone the project by running the following command in your terminal: ```git@github.com:laboyd001/bird-nerd.git```
 
 Once you have the project cloned in your terminal run: ```npm install```
@@ -10,7 +10,7 @@ This will install the libraries and other dependencies used by Bird Nerd.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
@@ -34,13 +34,19 @@ Don't forget to run the JSON server in another instance of your terminal so you 
 
 Make sure while in the new terminal window you ```cd``` into the ```api``` directory for Bird Nerd.  Once you are there run the following command: ```json-server -p 5002 -w birdnerd.json```
 
+## Resources
+
 ### Google Maps JavaScript API & Google Geocoding API
 
-The mapping component is built using both the Google Maps JavaScript API and the Google Geocoding API.
+The mapping component is built using both the Google Maps JavaScript API and the Google Geocoding API.  Both APIs will need to be enabled in the Google Developer Console.
 
 Markers are added to the map based on the location that the user is adding to their Bird Sighting entry.  The google geocoder is able to take the name of that location and look up the longitude and latitude.  I then post those coordinates to the database of bird sightings.  If the location is updated the geocoder with find the new coordinates and I then patch those to the database.
 
-Markers are displayed on the map by iterating over the bird sighting database, finding the coordinates, filtering to just the logged in user's data, and then rendering them on the map.
+Markers are displayed on the map by iterating over the bird sighting database, finding the coordinates, filtering to just the logged in user's data, and then rendering them on the map.  
+
+The map itself uses the computer's location for the initial center.  So if the user is in Chicago that's the center of the map.  Likewise, if the user is in Nashville, that will be the center of the map.
+
+To use the Google mapping resources you will need to sign up to recieve a unique API key.  You will also need to tell Google a little about the project using your API key.
 
 To learn more about the Google Maps Platform visit [The Google Cloud Developer Portal](https://cloud.google.com/maps-platform/)
 
@@ -55,6 +61,17 @@ To learn more about Reactstrap vist their documentation [reactstrap](https://rea
 For help with logos I visited the Canva website and found a simplistic bird logo.  I was able to create it in a couple different colors for usage in different components in the app.
 
 Check out [Canva](https://www.canva.com/)
+
+### Moment.js
+
+![Moment.js](http://www.stickpng.com/assets/images/58481018cef1014c0b5e494a.png)
+
+I used the Moment.js tool for formatting dates in this app.  With moment.js the user can parse, validate, manipulate, and display dates and times in JavaScript.
+
+When using moment.js in react make sure to use the following npm command ```npm install --save moment react-moment```
+
+For more information check out [Moment.js](https://momentjs.com/)  and  [npm](https://www.npmjs.com/package/react-moment)
+ 
 
 
 
