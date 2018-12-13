@@ -38,6 +38,7 @@ Make sure while in the new terminal window you ```cd``` into the ```api``` direc
 
 ### Google Maps JavaScript API & Google Geocoding API
 
+<img src="https://cdn.dativery.com/cdn/logos/channels/resized/google-maps-256.png" alt="google_maps" width="100px">
 The mapping component is built using both the Google Maps JavaScript API and the Google Geocoding API.  Both APIs will need to be enabled in the Google Developer Console.
 
 Markers are added to the map based on the location that the user is adding to their Bird Sighting entry.  The google geocoder is able to take the name of that location and look up the longitude and latitude.  I then post those coordinates to the database of bird sightings.  If the location is updated the geocoder with find the new coordinates and I then patch those to the database.
