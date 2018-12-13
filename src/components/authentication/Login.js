@@ -54,7 +54,7 @@ export default class Login extends Component {
               <p className="formLabel">
                 Remember me
                 <input
-                  className="formInput"
+                  className="form-checkbox"
                   onChange={this.props.handleFieldChange}
                   type="checkbox"
                   id="remember"

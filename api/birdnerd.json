@@ -44,17 +44,17 @@
     },
     {
       "date": "2018-12-06",
-      "location": "NSS",
+      "location": "Nashville Software School",
       "birdId": 2,
       "summary": "While I was getting my functionality to work I spotted this beautiful bird.",
-      "lat": "36.132817",
-      "lng": "-86.756593",
+      "lat": 36.1325338,
+      "lng": -86.75656420000001,
       "user_id": 1,
       "id": 3
     },
     {
       "date": "2018-12-10",
-      "location": "Beaman Park Nashville, TN",
+      "location": "Beaman Park",
       "birdId": 9,
       "summary": "Cool little gray bird",
       "lat": 36.2693775,
@@ -94,16 +94,6 @@
     },
     {
       "date": "2018-12-11",
-      "location": "Edwin Warner Park",
-      "birdId": 4,
-      "summary": "Beautiful!!!!!  Yay!!",
-      "lat": 36.0611193,
-      "lng": -86.8979768,
-      "user_id": 1,
-      "id": 12
-    },
-    {
-      "date": "2018-12-11",
       "location": "Long Hunter State Park",
       "birdId": 4,
       "summary": "Spotted this beauty near the couchville lake trail.",
@@ -134,13 +124,23 @@
     },
     {
       "date": "2018-12-12",
-      "location": "Caney Fork",
-      "birdId": 3,
-      "summary": "something here",
-      "lat": 36.2175836,
-      "lng": -86.6967543,
+      "location": "Montgomory Bell State Park",
+      "birdId": 6,
+      "summary": "Today I was out for a hike and spotted a beautiful house finch.",
+      "lat": 36.091157,
+      "lng": -87.2807021,
+      "user_id": 2,
+      "id": 18
+    },
+    {
+      "date": "2018-12-13",
+      "location": "Stones River Bend Park",
+      "birdId": 27,
+      "summary": "I spotted a group of wild turkeys roaming in a nearby field while on the Stones River Greenway.",
+      "lat": 36.1793847,
+      "lng": -86.66033379999999,
       "user_id": 1,
-      "id": 16
+      "id": 19
     }
   ],
   "birds": [
