@@ -53,26 +53,6 @@
       "id": 3
     },
     {
-      "date": "2018-12-10",
-      "location": "Beaman Park",
-      "birdId": 9,
-      "summary": "Cool little gray bird",
-      "lat": 36.2693775,
-      "lng": -86.9054694,
-      "user_id": 1,
-      "id": 7
-    },
-    {
-      "date": "2018-12-02",
-      "location": "Shelby Park",
-      "birdId": 4,
-      "summary": "Wow, I can't believe I spotted this bird in Shelby park!  It was amazing!",
-      "lat": 36.1698461,
-      "lng": -86.73592699999999,
-      "user_id": 1,
-      "id": 9
-    },
-    {
       "date": "2018-12-11",
       "location": "Nashville Software School",
       "birdId": 15,
@@ -151,6 +131,26 @@
       "lng": -86.73592699999999,
       "user_id": 1,
       "id": 20
+    },
+    {
+      "date": "2018-12-15",
+      "location": "Montgomery Bell State Park",
+      "birdId": 8,
+      "summary": "Today while I was hiking I spotted a beautiful Black-capped Chickadee",
+      "lat": 36.091157,
+      "lng": -87.2807021,
+      "user_id": 1,
+      "id": 21
+    },
+    {
+      "date": "2018-12-16",
+      "location": "Burgess Falls State Park",
+      "birdId": 22,
+      "summary": "I'm so excited!  I spotted an owl while I was hiking today!",
+      "lat": 36.0440675,
+      "lng": -85.5947065,
+      "user_id": 1,
+      "id": 22
     }
   ],
   "birds": [
