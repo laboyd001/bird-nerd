@@ -52,6 +52,7 @@ To learn more about the Google Maps Platform visit [The Google Cloud Developer P
 
 ### Reactstrap
 
+<img src="https://pbs.twimg.com/profile_images/713060283602698240/0Xm63ShM_400x400.jpg" alt="reactstrap" width="100px">
 I used the Reactstrap library for styling purposes.  This allowed for the clean look of the app.  I utilized modal, card, input, button, and container components.
 
 To learn more about Reactstrap vist their documentation [reactstrap](https://reactstrap.github.io/)
