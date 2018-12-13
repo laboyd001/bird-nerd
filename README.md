@@ -1,12 +1,12 @@
-# Bird Nerd
-Bird Nerd is an app for casual bird enthusiasts that enjoy birdwatching, but don't have the best memory.  This app provides the user a tool where they can record a bird sighting, lookup a bird by type and color, and view their bird sightings on a map.  Bird Nerd is written using the React framework.
+# Backyard Birder
+Backyard Birder is an app for casual bird enthusiasts that enjoy birdwatching, but don't have the best memory.  This app provides the user a tool where they can record a bird sighting, lookup a bird by type and color, and view their bird sightings on a map.  Backyard Birder is written using the React framework.
 
 ## Getting Started
-To run Bird Nerd locally, create an empty directory and clone the project by running the following command in your terminal: ```git@github.com:laboyd001/bird-nerd.git```
+To run Backyard Birder locally, create an empty directory and clone the project by running the following command in your terminal: ```git@github.com:laboyd001/bird-nerd.git```
 
 Once you have the project cloned in your terminal run: ```npm install```
 
-This will install the libraries and other dependencies used by Bird Nerd.
+This will install the libraries and other dependencies used by Backyard Birder.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -30,9 +30,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Database
 
-Don't forget to run the JSON server in another instance of your terminal so you will have access to the data that Bird Nerd is capturing.
+Don't forget to run the JSON server in another instance of your terminal so you will have access to the data that Backyard Birder is capturing.
 
-Make sure while in the new terminal window you ```cd``` into the ```api``` directory for Bird Nerd.  Once you are there run the following command: ```json-server -p 5002 -w birdnerd.json```
+Make sure while in the new terminal window you ```cd``` into the ```api``` directory for Backyard Birder.  Once you are there run the following command: ```json-server -p 5002 -w birdnerd.json```
 
 ## Resources
 
