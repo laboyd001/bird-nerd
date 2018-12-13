@@ -1,3 +1,5 @@
+<img src="src/components/authentication/bird_nerd_logo.png" alt="bird_logo" width="100px">
+
 # Backyard Birder
 Backyard Birder is an app for casual bird enthusiasts that enjoy birdwatching, but don't have the best memory.  This app provides the user a tool where they can record a bird sighting, lookup a bird by type and color, and view their bird sightings on a map.  Backyard Birder is written using the React framework.
 
