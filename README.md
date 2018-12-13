@@ -22,14 +22,41 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
 ### Database
 
 Don't forget to run the JSON server in another instance of your terminal so you will have access to the data that Bird Nerd is capturing.
 
 Make sure while in the new terminal window you ```cd``` into the ```api``` directory for Bird Nerd.  Once you are there run the following command: ```json-server -p 5002 -w birdnerd.json```
 
-## Learn More
+### Google Maps JavaScript API & Google Geocoding API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The mapping component is built using both the Google Maps JavaScript API and the Google Geocoding API.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Markers are added to the map based on the location that the user is adding to their Bird Sighting entry.  The google geocoder is able to take the name of that location and look up the longitude and latitude.  I then post those coordinates to the database of bird sightings.  If the location is updated the geocoder with find the new coordinates and I then patch those to the database.
+
+Markers are displayed on the map by iterating over the bird sighting database, finding the coordinates, filtering to just the logged in user's data, and then rendering them on the map.
+
+To learn more about the Google Maps Platform visit [The Google Cloud Developer Portal](https://cloud.google.com/maps-platform/)
+
+### Reactstrap
+
+I used the Reactstrap library for styling purposes.  This allowed for the clean look of the app.  I utilized modal, card, input, button, and container components.
+
+To learn more about Reactstrap vist their documentation [reactstrap](https://reactstrap.github.io/)
+
+### Canva
+
+For help with logos I visited the Canva website and found a simplistic bird logo.  I was able to create it in a couple different colors for usage in different components in the app.
+
+Check out [Canva](https://www.canva.com/)
+
+
+
+
+
