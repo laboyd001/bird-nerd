@@ -75,6 +75,10 @@ I used the Moment.js tool for formatting dates in this app.  With moment.js the 
 When using moment.js in react make sure to use the following npm command ```npm install --save moment react-moment```
 
 For more information check out [Moment.js](https://momentjs.com/)  and  [npm](https://www.npmjs.com/package/react-moment)
+
+# App Demo
+
+![](backyard_birder.gif)
  
 
 
