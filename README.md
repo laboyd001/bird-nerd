@@ -64,8 +64,7 @@ Check out [Canva](https://www.canva.com/)
 
 ### Moment.js
 
-![Moment.js](http://www.stickpng.com/assets/images/58481018cef1014c0b5e494a.png)
-
+<img src="https://www.bootcdn.cn/assets/img/momentjs.svg?1541408619167" alt="moment.js" width="100px">
 I used the Moment.js tool for formatting dates in this app.  With moment.js the user can parse, validate, manipulate, and display dates and times in JavaScript.
 
 When using moment.js in react make sure to use the following npm command ```npm install --save moment react-moment```
