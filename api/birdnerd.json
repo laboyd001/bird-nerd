@@ -141,6 +141,36 @@
       "lng": -86.6967543,
       "user_id": 1,
       "id": 16
+    },
+    {
+      "date": "2018-12-13",
+      "location": "Montgomery Bell",
+      "birdId": 6,
+      "summary": "Such a beautiful little bird flying about",
+      "lat": 36.091157,
+      "lng": -87.2807021,
+      "user_id": 1,
+      "id": 17
+    },
+    {
+      "date": "2018-12-12",
+      "location": "Montgomory Bell State Park",
+      "birdId": 6,
+      "summary": "Today I was out for a hike and spotted a beautiful house finch.",
+      "lat": 36.091157,
+      "lng": -87.2807021,
+      "user_id": 2,
+      "id": 18
+    },
+    {
+      "date": "2018-12-14",
+      "location": "2930 Mcgavok Pike Nashville",
+      "birdId": 14,
+      "summary": "Jenn saw a bird!!!  Woo hoo",
+      "lat": 36.2036849,
+      "lng": -86.6776929,
+      "user_id": 1,
+      "id": 19
     }
   ],
   "birds": [

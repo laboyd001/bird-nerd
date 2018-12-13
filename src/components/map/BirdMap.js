@@ -87,6 +87,7 @@ class BirdMap extends React.Component {
               name={item.location}
               summary={item.summary}
               bird={item.bird.name}
+              birdImage={item.bird.image}
               position={{ lat: item.lat, lng: item.lng }}
             />
           ))}
@@ -97,6 +98,7 @@ class BirdMap extends React.Component {
             <h4 className="marker-info">{this.state.selectedPlace.name}</h4>
             <h6 className="marker-info">{this.state.selectedPlace.bird}</h6>
             <p className="marker-info">{this.state.selectedPlace.summary}</p>
+            <img src={this.state.selectedPlace.birdImage} alt={this.state.selectedPlace.name} className="birdMap-image"/>
          
         </InfoWindow>
       </Map>
