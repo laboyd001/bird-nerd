@@ -44,7 +44,7 @@ export default class NavBar extends React.Component {
             <img src={bird} className="icon-bird-small" alt="bird" />
                 <a href="/" className="text-light big-header" 
                 style={{ textDecoration: 'none' }}>
-                  Bird Nerd     
+                  Backyard Birder   
                 </a>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
@@ -80,7 +80,7 @@ export default class NavBar extends React.Component {
         <Navbar color="dark" light expand="md">
         <img src={bird} className="icon-bird-small" alt="bird" />
         <h1 className="text-light big-header" href="/">
-          Bird Nerd
+          Backyard Birder
         </h1>
         </Navbar>
       );
