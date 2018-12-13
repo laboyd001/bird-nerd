@@ -74,16 +74,6 @@
     },
     {
       "date": "2018-12-11",
-      "location": "Long Hunter State Park",
-      "birdId": 4,
-      "summary": "Spotted this beauty near the couchville lake trail.",
-      "lat": 36.09375259999999,
-      "lng": -86.55666339999999,
-      "user_id": 2,
-      "id": 13
-    },
-    {
-      "date": "2018-12-11",
       "location": "Fall Creek Falls Park",
       "birdId": 32,
       "summary": "The geese are back!  Don't miss them!",
@@ -151,6 +141,16 @@
       "lng": -85.5947065,
       "user_id": 1,
       "id": 22
+    },
+    {
+      "date": "2018-12-13",
+      "location": "Target Donelson, TN",
+      "birdId": 22,
+      "summary": "Can you believe I spotted an owl in the Target parking lot?",
+      "lat": 36.1825928,
+      "lng": -86.63712389999999,
+      "user_id": 2,
+      "id": 23
     }
   ],
   "birds": [
