@@ -9,12 +9,14 @@ import {
   ButtonGroup
 } from "reactstrap";
 
+
+// This is where the template for the registration lives.  It is how the registration page will be rendered. the handler props are passed here as well as any other methods like the construct new user function
 export default class Register extends Component {
   render() {
     return (
       <Container>
-        <div className={this.props.hideLoginForm ? "bryans__class" : "hide"}>
-          <div className="login__form">
+        <div className={this.props.hideLoginForm ? "registration-form" : "hide"}>
+          <div className="registration-form">
             <h2>Register</h2>
             <InputGroup>
               <InputGroupAddon addonType="prepend">

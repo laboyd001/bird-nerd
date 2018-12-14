@@ -3,6 +3,7 @@ import APIManager from "../../modules/APIManager"
 import Register from "./Register"
 import Login from "./Login"
 
+// this is the controller for logging in and registering.  The state, handlers, validation, user contructor, and path to login and register live here
 export default class Welcome extends Component {
   // Set initial state
   state = {
@@ -42,7 +43,7 @@ export default class Welcome extends Component {
             )
             this.setState({
               currentUser: sessionStorage.getItem("userId")
-            }, console.log(this.state.currentUser))
+            })
             this.props.history.push("/")
 
           } else {
@@ -71,7 +72,7 @@ export default class Welcome extends Component {
       APIManager.getAllEntries("users", `/?email=${this.state.registerEmail}`)
         .then((returns) => {
           if (returns.length > 0) {
-            alert("Tht email is already. Please use another email")
+            alert("That email is already in use. Please use another email")
           } else {
             this.constructNewUser()
             alert("You are now registered! Please log in")

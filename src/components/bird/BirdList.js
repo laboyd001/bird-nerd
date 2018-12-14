@@ -10,6 +10,7 @@ export default class BirdList extends Component {
     hideSelector: false
   };
 
+  // when the page loads all the birds are displayed and sorted asc alphabetically.
   componentDidMount() {
     const newState = {};
 
@@ -20,11 +21,13 @@ export default class BirdList extends Component {
       .then(() => this.setState(newState));
   }
 
+  // this handler exists so I can hide the color selector until a type is selected.  Only then is the user able to select color.
   handleChangeSelect = () => {
     const currentState = this.state.hideSelector;
     this.setState({ hideSelector: !currentState });
   };
 
+  // this function exists so there are no duplicate bird types in the dropdown selector
   getUniqueType() {
     const birds = this.state.birds;
     const typeSelection = [...new Set(birds.map(item => item.type))];
@@ -34,6 +37,7 @@ export default class BirdList extends Component {
     ));
   }
 
+  // this function exists so there are no duplicate bird colors in the dropdown selector
   getUniqueColor() {
     const birds = this.state.birds;
     const colorSelection = [...new Set(birds.map(item => item.color))];
@@ -43,6 +47,7 @@ export default class BirdList extends Component {
     ));
   }
 
+  // this function only displays the birds with the bird type the user has selected
   getBirdType = type => {
     const newState = {};
 
@@ -54,6 +59,7 @@ export default class BirdList extends Component {
       .then(() => this.setState(newState));
   };
 
+  // this function only displays the birds with the bird type and color the user has selected
   getBirdColor = (color, type) => {
     const newState = {};
 
@@ -68,6 +74,7 @@ export default class BirdList extends Component {
       .then(() => this.setState(newState));
   };
 
+  // this function gets all the birds again I call it when the user hits the clear button
   getAllBirds = () => {
     const newState = {};
 
@@ -79,12 +86,14 @@ export default class BirdList extends Component {
       .then(() => this.setState(newState));
   };
 
+  // this is for the dropdown selections...  it changes the state from empty string to whatever the user selects
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
 
+  // below we render the bird list and selectors. The .map method iterates over all the birds in the DB and renders the cards
   render() {
     const birdType = this.getUniqueType();
     const birdColor = this.getUniqueColor();

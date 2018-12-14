@@ -3,6 +3,7 @@ import { CardText, CardBody,
   CardTitle, CardSubtitle, Container } from 'reactstrap';
 import "./Bird.css";
 
+// This is the template for how the bird card will be rendered.  It has props handed to it from the BirdList.
 export default class BirdCard extends Component {
   render() {
     return (

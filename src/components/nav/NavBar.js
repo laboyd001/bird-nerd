@@ -12,10 +12,13 @@ import bird from "./bird_logo_transparent.png"
 
 
 export default class NavBar extends React.Component {
+
+  // isAuthenticated is looking for a userId to exist in either sessionStorage or localStorage
   isAuthenticated = () =>
     sessionStorage.getItem("userId") !== null ||
     localStorage.getItem("userId") !== null;
 
+  // the constructor and toggle came with the reactstrap navbar so it can collaspe when the screen shrinks
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -30,11 +33,13 @@ export default class NavBar extends React.Component {
     });
   }
 
+  // the logoutUser function removes the userId from session and local storage
   logoutUser = () => {
     localStorage.removeItem("userId");
     sessionStorage.removeItem("userId");
   };
 
+  // if the user is logged in the full navbar will appear otherwise the user will just see the logo
   noNavonLogin = () => {
     if (this.isAuthenticated()) {
       return (
@@ -87,6 +92,7 @@ export default class NavBar extends React.Component {
     }
   };
 
+  // we're calling the noNavonLogin function in the render method
   render() {
     return (
       this.noNavonLogin()

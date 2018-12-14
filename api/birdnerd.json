@@ -29,6 +29,12 @@
       "password": "ziggy",
       "email": "ziggy@ziggy.com",
       "id": 5
+    },
+    {
+      "name": "Katie",
+      "password": "katie",
+      "email": "katie@katie.com",
+      "id": 6
     }
   ],
   "sightings": [
@@ -113,36 +119,6 @@
       "id": 19
     },
     {
-      "date": "2018-12-14",
-      "location": "Shelby Park",
-      "birdId": 10,
-      "summary": "testAHHHHHHHH!",
-      "lat": 36.1698461,
-      "lng": -86.73592699999999,
-      "user_id": 1,
-      "id": 20
-    },
-    {
-      "date": "2018-12-15",
-      "location": "Montgomery Bell State Park",
-      "birdId": 8,
-      "summary": "Today while I was hiking I spotted a beautiful Black-capped Chickadee",
-      "lat": 36.091157,
-      "lng": -87.2807021,
-      "user_id": 1,
-      "id": 21
-    },
-    {
-      "date": "2018-12-16",
-      "location": "Burgess Falls State Park",
-      "birdId": 22,
-      "summary": "I'm so excited!  I spotted an owl while I was hiking today!",
-      "lat": 36.0440675,
-      "lng": -85.5947065,
-      "user_id": 1,
-      "id": 22
-    },
-    {
       "date": "2018-12-13",
       "location": "Target Donelson, TN",
       "birdId": 22,
@@ -151,6 +127,36 @@
       "lng": -86.63712389999999,
       "user_id": 2,
       "id": 23
+    },
+    {
+      "date": "2018-12-14",
+      "location": "Sedgwick County Park",
+      "birdId": 17,
+      "summary": "Spotted a blue jay in shelby park.  He was so pretty!!!!",
+      "lat": 37.71947189999999,
+      "lng": -97.4146181,
+      "user_id": 1,
+      "id": 24
+    },
+    {
+      "date": "2018-12-13",
+      "location": "BNA",
+      "birdId": 3,
+      "summary": "Why are there ducks here",
+      "lat": 36.126317,
+      "lng": -86.67737129999999,
+      "user_id": 5,
+      "id": 26
+    },
+    {
+      "date": "2018-12-14",
+      "location": "Hollywood 27",
+      "birdId": 2,
+      "summary": "I think he was following me.",
+      "lat": 36.1060324,
+      "lng": -86.7621408,
+      "user_id": 6,
+      "id": 28
     }
   ],
   "birds": [

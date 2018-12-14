@@ -3,17 +3,15 @@ import { Route, Redirect } from "react-router-dom";
 import SightingList from "./sighting/SightingList";
 import BirdList from "./bird/BirdList";
 import BirdMap from "./map/BirdMap"
-import APIManager from "../modules/APIManager";
 import NavBar from "./nav/NavBar";
 import Welcome from './authentication/Welcome'
 
-// import SightingCard from './sighting/SightingCard'
-
+//This is the main controller for the app before the user gets routed to either sightings, birds, or maps
 export default class ApplicationViews extends Component {
   isAuthenticated = () => (sessionStorage.getItem("userId") !== null || localStorage.getItem("userId") !== null)
 
-  getAllUsers = () => APIManager.getAllEntries("users")
 
+  // function to grab user credentials from local or session storage
   getCurrentUser = () => {
     const currentUser = +sessionStorage.getItem("userId") || +localStorage.getItem("userId")
     return currentUser
@@ -31,7 +29,6 @@ export default class ApplicationViews extends Component {
               return (
                 <SightingList
                   {...props}
-                  getAllUsers={this.getAllUsers}
                   getCurrentUser={this.getCurrentUser}
                 />
               );
@@ -70,7 +67,7 @@ export default class ApplicationViews extends Component {
        />
        <Route path="/welcome" render={props => {
           return (
-            <Welcome getAllUsers={this.getAllUsers} getCurrentUser={this.getCurrentUser} {...props} />)
+            <Welcome getCurrentUser={this.getCurrentUser} {...props} />)
         }} />
       </React.Fragment>
     );

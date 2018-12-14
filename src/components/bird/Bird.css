@@ -16,8 +16,6 @@
 }
 
 .bird-details {
-  /* margin-left: 50px;
-  margin-top: 10px; */
   display: flex;
   flex-direction: column;
   align-content: center;
