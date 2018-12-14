@@ -110,16 +110,6 @@
     },
     {
       "date": "2018-12-13",
-      "location": "Stones River Bend Park",
-      "birdId": 27,
-      "summary": "I spotted a group of wild turkeys roaming in a nearby field while on the Stones River Greenway.",
-      "lat": 36.1793847,
-      "lng": -86.66033379999999,
-      "user_id": 1,
-      "id": 19
-    },
-    {
-      "date": "2018-12-13",
       "location": "Target Donelson, TN",
       "birdId": 22,
       "summary": "Can you believe I spotted an owl in the Target parking lot?",
@@ -127,16 +117,6 @@
       "lng": -86.63712389999999,
       "user_id": 2,
       "id": 23
-    },
-    {
-      "date": "2018-12-14",
-      "location": "Sedgwick County Park",
-      "birdId": 17,
-      "summary": "Spotted a blue jay in shelby park.  He was so pretty!!!!",
-      "lat": 37.71947189999999,
-      "lng": -97.4146181,
-      "user_id": 1,
-      "id": 24
     },
     {
       "date": "2018-12-13",
