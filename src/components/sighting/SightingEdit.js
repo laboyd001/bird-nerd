@@ -136,7 +136,7 @@ export default class SightingEdit extends React.Component {
           </div>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" 
+            <Button color="danger" 
             onClick={() => {
               this.toggle();
               this.props.constructEditedSighting();
