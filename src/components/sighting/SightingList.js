@@ -3,14 +3,12 @@ import APIManager from "../../modules/APIManager";
 import SightingCard from "./SightingCard";
 import SightingModal from "../sighting/SightingModal";
 import Geocode from "react-geocode";
-// import BirdSearch from './BirdSearch'
 
-
+// This is the controller for sightings.  State, handlers, methods, and the passing of state happens here
 export default class SightingList extends Component {
   state = {
     birds: [],
     sightings: [],
-    users: [],
     currentUserId: this.props.getCurrentUser(),
     userName: "",
     editDate: "",
@@ -24,6 +22,7 @@ export default class SightingList extends Component {
     lng: ""
   };
 
+  // when the component mounts we're getting all the birds, sightings, and user(users in case I used the user name as a greeting)
   componentDidMount() {
     const newState = {};
     APIManager.getAllEntries("birds").then(birds => {
@@ -44,6 +43,7 @@ export default class SightingList extends Component {
       .then(() => this.setState(newState));
   }
 
+  // post sighting to DB and then show all the sightings on the page
   addSighting = sighting => {
     return APIManager.addEntry("sightings", sighting)
       .then(() =>
@@ -61,6 +61,7 @@ export default class SightingList extends Component {
       );
   };
 
+  // delete a sighting and then show all the sightings on the page
   deleteSighting = id =>
     APIManager.deleteEntry("sightings", id)
       .then(() =>
@@ -77,6 +78,7 @@ export default class SightingList extends Component {
         })
       );
 
+  // edit a sighting and then see all the sightings on the page
   editSighting = (editId, editSighting) =>
     APIManager.editEntry("sightings", editId, editSighting)
       .then(() =>
@@ -93,6 +95,7 @@ export default class SightingList extends Component {
         })
       );
 
+  // edit handler sets state of the edited things when edit is clicked
   handleEditClick = (
     editDate,
     editLocation,
@@ -113,12 +116,14 @@ export default class SightingList extends Component {
     });
   };
 
+  // this handles field changes on the inputs
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
 
+  // this is the new sighting constructor that calls the geocoding object maker
   constructNewSighting = () => {
     if (this.state.bird === "") {
       window.alert("Please select a bird");
@@ -127,6 +132,7 @@ export default class SightingList extends Component {
     }
   };
 
+  // function that geocodes and creates an object
   geocodeLocation = () => {
     Geocode.setApiKey(process.env.REACT_APP_API_KEY_Google);
 
@@ -152,38 +158,37 @@ export default class SightingList extends Component {
     );
   };
 
+  // function that geocodes ad creates the edited object
   constructEditedSighting = () => {
     Geocode.setApiKey(process.env.REACT_APP_API_KEY_Google);
-    const conditionBird = typeof this.state.editBirdId === "number";
+      const conditionBird = typeof this.state.editBirdId === "number";
     Geocode.fromAddress(this.state.editLocation).then(response => {
       const latitude = response.results[0].geometry.location.lat;
       const longitude = response.results[0].geometry.location.lng;
-      this.setState({ editLat: latitude, editLng: longitude });
-      const editSighting = {
-        date: this.state.editDate,
-        location: this.state.editLocation,
-        birdId: conditionBird
-          ? this.state.editBirdId
-          : this.state.birds.find(b => b.name === this.state.editBirdId).id,
-        summary: this.state.editSummary,
-        lat: this.state.editLat,
-        lng: this.state.editLng,
-        id: this.state.editId
-      };
-      console.log("lat", this.state.editLat)
-      console.log("edit sighting", editSighting);
-      this.editSighting(editSighting.id, editSighting);
+        this.setState({ editLat: latitude, editLng: longitude });
+          const editSighting = {
+            date: this.state.editDate,
+            location: this.state.editLocation,
+            birdId: conditionBird
+            ? this.state.editBirdId
+            : this.state.birds.find(b => b.name === this.state.editBirdId).id,
+            summary: this.state.editSummary,
+            lat: this.state.editLat,
+            lng: this.state.editLng,
+            id: this.state.editId
+            };
+            // console.log("lat", this.state.editLat)
+            // console.log("edit sighting", editSighting);
+        this.editSighting(editSighting.id, editSighting);
     });
   };
 
+  // render methd that leads to sightingmodal and sightingcard
   render() {
     return (
       <React.Fragment>
         <div className="sighting-header">
           <h2 className="page-title">Sightings</h2>
-
-             
-
           <SightingModal
             birds={this.state.birds}
             sightings={this.state.sightings}

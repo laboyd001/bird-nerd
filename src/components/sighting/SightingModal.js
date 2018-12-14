@@ -4,6 +4,7 @@ import APIManager from '../../modules/APIManager'
 // import BirdSearch from './BirdSearch'
 
 export default class SightingModal extends React.Component {
+  // constructor and toggle are for the reactstrap modals
   constructor(props) {
     super(props);
     this.state = {
@@ -28,6 +29,7 @@ export default class SightingModal extends React.Component {
     });
   }
 
+  // below we render the add new sighting modal
   render() {
     return (
       <div>
@@ -72,11 +74,6 @@ export default class SightingModal extends React.Component {
                   placeholder="Sighting Location"
                 />
               </div>
-
-               {/* <div>
-                <BirdSearch/>
-              </div> */}
-
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
@@ -103,7 +100,7 @@ export default class SightingModal extends React.Component {
                     Sighting Summary
                   </span>
                 </div>
-                <textarea
+                <textarea rows="5"
                   type="text"
                   className="form-control"
                   onChange={this.props.handleFieldChange}

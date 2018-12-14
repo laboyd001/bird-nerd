@@ -12,7 +12,7 @@ import "./auth.css"
 import bird from "./bird_nerd_logo.png"
 
 
-
+// This is where the template for the login lives.  It is how the login page will be rendered. The handler props are passed here.
 export default class Login extends Component {
   render() {
     return (

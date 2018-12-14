@@ -7,14 +7,15 @@ import Moment from 'react-moment';
 import BirdCard from '../bird/BirdCard'
 
 export default class SightingCard extends Component {
+
+  // this is our render method for how we want the sighting card to look
+  // I used a .filter method to pull in the bird card for the corresponding birdId on the sighting
+  // we also acces the edit and delete buttons here
   render() {
     return (
       <Container>
       <Card className="sighting-card">
         <CardBody>
-          {/* <CardTitle>
-          {this.props.sighting.bird.name}
-          </CardTitle> */}
           <CardTitle>
             {this.props.sighting.location}
           </CardTitle>

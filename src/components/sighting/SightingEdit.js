@@ -2,6 +2,8 @@ import React from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 export default class SightingEdit extends React.Component {
+
+  // constructor and toggle are for the modal
   constructor(props) {
     super(props);
     this.state = {
@@ -17,6 +19,8 @@ export default class SightingEdit extends React.Component {
     });
   }
 
+  // below we render the edit modal
+  // the birdName variable below is so that when we edit we can see the original bird name listed in the edit bird field
   render() {
     const birdName = this.props.birds.find(b=> b.id === this.props.sighting.birdId) || {};
     return (
@@ -103,7 +107,7 @@ export default class SightingEdit extends React.Component {
                     Sighting Summary
                   </span>
                 </div>
-                <input
+                <textarea rows="5"
                   type="text"
                   className="form-control"
                   onChange={this.props.handleFieldChange}
